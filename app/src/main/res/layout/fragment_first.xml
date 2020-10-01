@@ -11,7 +11,7 @@
         android:id="@+id/button_first"
         style="@style/buttonStyle"
         android:background="@drawable/round_corner_button"
-        android:padding="@dimen/dimen_16"
+        android:padding="@dimen/dimen_16dp"
         android:text="@string/next"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"

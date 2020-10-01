@@ -1,14 +1,29 @@
 <resources>
+
+
+    <style name="AppTheme.NoActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+    </style>
+
+
+    <style name="buttonStyle" parent="Widget.AppCompat.Button.Colored">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">@dimen/dimen_56dp</item>
+        <item name="android:textColor">@color/brandFontColor</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">@dimen/font_size_14</item>
+        <item name="background">@drawable/round_corner_button</item>
+    </style>
+
+
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.DarkActionBar">
         <!-- Customize your theme here. -->
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
-    </style>
-
-    <style name="AppTheme.NoActionBar">
-        <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
 
@@ -16,13 +31,70 @@
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
-    <style name="buttonStyle" parent="Widget.AppCompat.Button.Colored">
-        <item name="android:layout_width">wrap_content</item>
-        <item name="android:layout_height">@dimen/dimen_56</item>
+    <style name="NavDrawerTextStyle" parent="Base.TextAppearance.AppCompat">
         <item name="android:textColor">@color/brandFontColor</item>
+        <item name="android:textSize">@dimen/font_size_16</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textAllCaps">false</item>
-        <item name="android:textSize">@dimen/font_14sp</item>
-        <item name="background">@drawable/round_corner_button</item>
     </style>
+
+    <style name="myAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="colorAccent">@color/white_color_code_1</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">@dimen/font_size_16</item>
+        <item name="android:textColor">@color/white_color_code_1</item>
+        <item name="android:background">@color/blue_color_code_1</item>
+    </style>
+
+    <style name="headingTextView" parent="TextAppearance.AppCompat.Title">
+
+        <item name="android:textSize">@dimen/font_size_32</item>
+        <item name="android:textColor">@color/white_color_code_1</item>
+    </style>
+
+    <style name="customSpinnerSmall" parent="@android:style/Widget.TextView.SpinnerItem">
+        <item name="android:textSize">@dimen/font_size_16</item>
+    </style>
+
+    <style name="customSpinnerMedium" parent="@android:style/Widget.TextView.SpinnerItem">
+        <item name="android:textSize">@dimen/font_size_32</item>
+    </style>
+
+    <style name="customSpinnerLarge" parent="@android:style/Widget.TextView.SpinnerItem">
+        <item name="android:textSize">@dimen/font_size_48</item>
+    </style>
+
+
+    <style name="smallToolbarText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/font_size_16</item>
+    </style>
+
+    <style name="mediumToolbarText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/font_size_24</item>
+    </style>
+
+    <style name="largeToolbarText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
+        <item name="android:textSize">@dimen/font_size_24</item>
+    </style>
+
+    <!--  <style name="feedbackInputText" parent="TextAppearance.AppCompat">
+          <item name="android:textColor">@color/white_color_code_1</item>
+          <item name="android:textSize">@dimen/font_size_24</item>
+          <item name="android:layout_margin">@dimen/dimen_16dp</item>
+          <item name="android:paddingLeft">@dimen/dimen_4dp</item>
+          <item name="android:textColorHint">@color/blue_color_code_2</item>
+      </style>-->
+
+
+    <style name="feedbackInputText" parent="TextAppearance.AppCompat">
+
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:textSize">@dimen/font_size_16</item>
+        <item name="android:layout_margin">@dimen/dimen_16dp</item>
+        <item name="android:paddingLeft">@dimen/dimen_4dp</item>
+        <item name="android:textColorHint">@color/Black</item>
+        <item name="android:padding">@dimen/dimen_16dp</item>
+
+    </style>
+
+
 </resources>

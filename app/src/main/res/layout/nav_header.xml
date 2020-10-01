@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@color/brandScreenBackground"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <ImageView
+        android:layout_width="200dp"
+        android:layout_height="200dp"
+        android:src="@mipmap/appicon" />
+
+
+    <!-- <TextView
+         style="@style/headingTextView"
+         android:text="@string/headerWorld"
+         android:layout_width="match_parent"
+         android:gravity="center_horizontal"
+         android:layout_marginTop="@dimen/dimen_32dp"
+         android:layout_height="wrap_content" />
+     <TextView
+         style="@style/headingTextView"
+         android:text="@string/headerNews"
+         android:layout_width="match_parent"
+         android:gravity="center_horizontal"
+         android:layout_height="wrap_content" />-->
+</LinearLayout>
