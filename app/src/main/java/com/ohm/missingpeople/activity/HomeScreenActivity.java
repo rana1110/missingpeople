@@ -1,12 +1,13 @@
-package com.ohm.missingpeople;
+package com.ohm.missingpeople.activity;
 
-import android.app.ProgressDialog;
 import android.os.Bundle;
 
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import com.google.android.material.internal.NavigationMenuView;
 import com.google.android.material.navigation.NavigationView;
-import com.google.android.material.snackbar.Snackbar;
+import com.ohm.missingpeople.R;
+import com.ohm.missingpeople.networkoperation.model.AllMissingPeople;
+import com.ohm.missingpeople.networkoperation.restclient.ApiClient;
+import com.ohm.missingpeople.networkoperation.restclient.ApiInterface;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -14,14 +15,18 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.DividerItemDecoration;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
+import android.util.Log;
 import android.view.View;
 
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class HomeScreenActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemSelectedListener {
     Toolbar toolbar;
@@ -30,12 +35,14 @@ public class HomeScreenActivity extends AppCompatActivity implements NavigationV
     ActionBarDrawerToggle toggle;
     DrawerLayout drawer;
     private SwipeRefreshLayout swipeRefreshLayout;
+    ApiInterface apiInterface;
+    Call<AllMissingPeople> newsGetDatacall;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         loadUI();
-
+        populateData();
 
     }
 
@@ -109,4 +116,19 @@ public class HomeScreenActivity extends AppCompatActivity implements NavigationV
         return false;
     }
 
+    private void populateData() {
+        apiInterface = ApiClient.getClient().create(ApiInterface.class);
+        newsGetDatacall = apiInterface.getMissingPeopleDetail();
+        newsGetDatacall.enqueue(new Callback<AllMissingPeople>() {
+            @Override
+            public void onResponse(Call<AllMissingPeople> call, Response<AllMissingPeople> response) {
+                Log.e("", response.body().toString());
+            }
+
+            @Override
+            public void onFailure(Call<AllMissingPeople> call, Throwable t) {
+                Log.e("error- ", t.getMessage().toString());
+            }
+        });
+    }
 }
