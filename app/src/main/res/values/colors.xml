@@ -3,14 +3,11 @@
     <color name="brandColor">#00ACC1</color>
     <color name="brandFontColor">#ffffff</color>
     <color name="brandScreenBackground">#ffffff</color>
-
+    <color name="brandColorCode2">#00838F</color>
 
     <color name="colorPrimary">@color/brandColor</color>
     <color name="colorPrimaryDark">@color/brandColor</color>
     <color name="colorAccent">@color/brandColor</color>
-
-
-
 
 
     <color name="blue_color_code_1">#0288D1</color>
@@ -19,9 +16,6 @@
     <color name="white_color_code_1">#ffffff</color>
 
     <color name="gray_color_code_1">#757575</color>
-
-
-
 
 
     <color name="Black">#161616</color>

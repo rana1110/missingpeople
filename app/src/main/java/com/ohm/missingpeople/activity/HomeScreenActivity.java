@@ -5,7 +5,9 @@ import android.os.Bundle;
 import com.google.android.material.internal.NavigationMenuView;
 import com.google.android.material.navigation.NavigationView;
 import com.ohm.missingpeople.R;
+import com.ohm.missingpeople.adapter.NewsAdapter;
 import com.ohm.missingpeople.networkoperation.model.AllMissingPeople;
+import com.ohm.missingpeople.networkoperation.model.MissingPeopleDataClass;
 import com.ohm.missingpeople.networkoperation.restclient.ApiClient;
 import com.ohm.missingpeople.networkoperation.restclient.ApiInterface;
 
@@ -15,6 +17,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import android.util.Log;
@@ -23,6 +27,8 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
+
+import java.util.ArrayList;
 
 import retrofit2.Call;
 import retrofit2.Callback;
@@ -37,6 +43,9 @@ public class HomeScreenActivity extends AppCompatActivity implements NavigationV
     private SwipeRefreshLayout swipeRefreshLayout;
     ApiInterface apiInterface;
     Call<AllMissingPeople> newsGetDatacall;
+    private RecyclerView recyclerView;
+    private NewsAdapter adapter;
+    RecyclerView.LayoutManager layoutManager;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -54,8 +63,9 @@ public class HomeScreenActivity extends AppCompatActivity implements NavigationV
         drawer = findViewById(R.id.drawer_layout);
         navMenuView = (NavigationMenuView) navigationView.getChildAt(0);
         swipeRefreshLayout = findViewById(R.id.pullToRefresh);
+        recyclerView = findViewById(R.id.recycler_view);
         swipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.brandColor));
-
+        layoutManager = new LinearLayoutManager(HomeScreenActivity.this);
         navMenuView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         navigationView.setNavigationItemSelectedListener(HomeScreenActivity.this);
         setSupportActionBar(toolbar);
@@ -123,6 +133,7 @@ public class HomeScreenActivity extends AppCompatActivity implements NavigationV
             @Override
             public void onResponse(Call<AllMissingPeople> call, Response<AllMissingPeople> response) {
                 Log.e("", response.body().toString());
+                generateNewsList((ArrayList<MissingPeopleDataClass>) response.body().getData());
             }
 
             @Override
@@ -130,5 +141,13 @@ public class HomeScreenActivity extends AppCompatActivity implements NavigationV
                 Log.e("error- ", t.getMessage().toString());
             }
         });
+    }
+
+    private void generateNewsList(ArrayList<MissingPeopleDataClass> empDataList) {
+            recyclerView = findViewById(R.id.recycler_view);
+            //  adapter = new NewsAdapter(empDataList, getApplicationContext(), newsCategory);
+            adapter = new NewsAdapter(empDataList, this, "");
+            recyclerView.setLayoutManager(layoutManager);
+            recyclerView.setAdapter(adapter);
     }
 }

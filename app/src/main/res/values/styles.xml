@@ -86,15 +86,17 @@
 
 
     <style name="feedbackInputText" parent="TextAppearance.AppCompat">
-
         <item name="android:textColor">@color/Black</item>
         <item name="android:textSize">@dimen/font_size_16</item>
         <item name="android:layout_margin">@dimen/dimen_16dp</item>
         <item name="android:paddingLeft">@dimen/dimen_4dp</item>
         <item name="android:textColorHint">@color/Black</item>
         <item name="android:padding">@dimen/dimen_16dp</item>
-
     </style>
-
+    <style name="recyclerTextViewStyle" parent="TextAppearance.AppCompat">
+        <item name="android:textColor">@color/brandFontColor</item>
+        <item name="android:textSize">@dimen/font_size_16</item>
+        <item name="android:textStyle">bold</item>
+    </style>
 
 </resources>

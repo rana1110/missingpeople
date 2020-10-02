@@ -4,7 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/drawer_layout"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:background="@color/brandColorCode2">
 
 
     <LinearLayout
@@ -12,11 +13,28 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-
         <include
             layout="@layout/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/pullToRefresh"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/dimen_8dp">
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recycler_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content" />
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
+        </RelativeLayout>
 
 
         <TextView
@@ -28,23 +46,10 @@
             android:textSize="@dimen/font_size_40"
             android:visibility="gone" />
 
-        <RelativeLayout
+        <include
+            layout="@layout/toolbar"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-
-            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
-                android:id="@+id/pullToRefresh"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-                <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/recycler_view"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content" />
-            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
-
-        </RelativeLayout>
+            android:layout_height="wrap_content" />
     </LinearLayout>
 
     <com.google.android.material.navigation.NavigationView
@@ -56,7 +61,7 @@
         android:fitsSystemWindows="true"
         android:textStyle="bold"
         app:headerLayout="@layout/nav_header"
-        app:itemIconTint="@color/brandScreenBackground"
+        app:itemIconTint="@color/brandColor"
         app:itemTextAppearance="@style/NavDrawerTextStyle"
         app:menu="@menu/activity_home_screen_drawer">
 
@@ -70,14 +75,14 @@
                 android:layout_alignParentBottom="true"
                 android:orientation="vertical">
 
-               <!-- <TextView
-                    android:id="@+id/vesrionName"
-                    style="@style/headingTextView"
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginBottom="@dimen/dimen_8dp"
-                    android:gravity="center_horizontal"
-                    android:text="@string/version_text" />-->
+                <!-- <TextView
+                     android:id="@+id/vesrionName"
+                     style="@style/headingTextView"
+                     android:layout_width="match_parent"
+                     android:layout_height="wrap_content"
+                     android:layout_marginBottom="@dimen/dimen_8dp"
+                     android:gravity="center_horizontal"
+                     android:text="@string/version_text" />-->
 
             </LinearLayout>
         </RelativeLayout>
