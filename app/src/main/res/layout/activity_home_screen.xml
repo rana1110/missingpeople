@@ -57,11 +57,11 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@color/brandColor"
+        android:background="@color/brandColorCode1"
         android:fitsSystemWindows="true"
         android:textStyle="bold"
         app:headerLayout="@layout/nav_header"
-        app:itemIconTint="@color/brandColor"
+        app:itemIconTint="@color/brandColorCode1"
         app:itemTextAppearance="@style/NavDrawerTextStyle"
         app:menu="@menu/activity_home_screen_drawer">
 

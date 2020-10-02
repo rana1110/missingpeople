@@ -36,27 +36,29 @@
 
         <TextView
             android:id="@+id/personName"
+            android:textSize="@dimen/font_size_20"
             style="@style/recyclerTextViewStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
         <TextView
             android:id="@+id/personMissingFrom"
+            android:textStyle="normal"
             style="@style/recyclerTextViewStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-        <TextView
+       <!-- <TextView
             android:id="@+id/personMissingDate"
             style="@style/recyclerTextViewStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
-
-        <TextView
+-->
+        <!--<TextView
             android:id="@+id/personContactDetails"
             style="@style/recyclerTextViewStyle"
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            android:layout_height="wrap_content" />-->
 
     </LinearLayout>
 
@@ -69,12 +71,14 @@
         android:orientation="vertical">
 
         <ImageView
+            android:id="@+id/callIconImageButton"
             android:layout_width="@dimen/dimen_24dp"
             android:layout_height="@dimen/dimen_24dp"
             android:gravity="center"
             android:src="@drawable/call_icon" />
 
         <ImageView
+            android:id="@+id/shareIconImageButton"
             android:layout_width="@dimen/dimen_24dp"
             android:layout_height="@dimen/dimen_24dp"
             android:layout_marginTop="@dimen/dimen_24dp"

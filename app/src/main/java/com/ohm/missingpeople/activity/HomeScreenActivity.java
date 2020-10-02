@@ -5,7 +5,7 @@ import android.os.Bundle;
 import com.google.android.material.internal.NavigationMenuView;
 import com.google.android.material.navigation.NavigationView;
 import com.ohm.missingpeople.R;
-import com.ohm.missingpeople.adapter.NewsAdapter;
+import com.ohm.missingpeople.adapter.AllMissingPersonAdapter;
 import com.ohm.missingpeople.networkoperation.model.AllMissingPeople;
 import com.ohm.missingpeople.networkoperation.model.MissingPeopleDataClass;
 import com.ohm.missingpeople.networkoperation.restclient.ApiClient;
@@ -44,7 +44,7 @@ public class HomeScreenActivity extends AppCompatActivity implements NavigationV
     ApiInterface apiInterface;
     Call<AllMissingPeople> newsGetDatacall;
     private RecyclerView recyclerView;
-    private NewsAdapter adapter;
+    private AllMissingPersonAdapter adapter;
     RecyclerView.LayoutManager layoutManager;
 
     @Override
@@ -64,7 +64,7 @@ public class HomeScreenActivity extends AppCompatActivity implements NavigationV
         navMenuView = (NavigationMenuView) navigationView.getChildAt(0);
         swipeRefreshLayout = findViewById(R.id.pullToRefresh);
         recyclerView = findViewById(R.id.recycler_view);
-        swipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.brandColor));
+        swipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.brandColorCode1));
         layoutManager = new LinearLayoutManager(HomeScreenActivity.this);
         navMenuView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         navigationView.setNavigationItemSelectedListener(HomeScreenActivity.this);
@@ -144,10 +144,10 @@ public class HomeScreenActivity extends AppCompatActivity implements NavigationV
     }
 
     private void generateNewsList(ArrayList<MissingPeopleDataClass> empDataList) {
-            recyclerView = findViewById(R.id.recycler_view);
-            //  adapter = new NewsAdapter(empDataList, getApplicationContext(), newsCategory);
-            adapter = new NewsAdapter(empDataList, this, "");
-            recyclerView.setLayoutManager(layoutManager);
-            recyclerView.setAdapter(adapter);
+        recyclerView = findViewById(R.id.recycler_view);
+        //  adapter = new NewsAdapter(empDataList, getApplicationContext(), newsCategory);
+        adapter = new AllMissingPersonAdapter(empDataList, this);
+        recyclerView.setLayoutManager(layoutManager);
+        recyclerView.setAdapter(adapter);
     }
 }

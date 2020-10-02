@@ -1,13 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="brandColor">#00ACC1</color>
-    <color name="brandFontColor">#ffffff</color>
-    <color name="brandScreenBackground">#ffffff</color>
-    <color name="brandColorCode2">#00838F</color>
+    <color name="brandColorCode1">#004D40</color>
+    <color name="brandColorCode2">#009688</color>
+    <color name="brandColorCode3">#ffffff</color>
+    <color name="brandColorCode4">#ffffff</color>
 
-    <color name="colorPrimary">@color/brandColor</color>
-    <color name="colorPrimaryDark">@color/brandColor</color>
-    <color name="colorAccent">@color/brandColor</color>
+
+    <color name="colorPrimary">@color/brandColorCode1</color>
+    <color name="colorPrimaryDark">@color/brandColorCode1</color>
+    <color name="colorAccent">@color/brandColorCode1</color>
 
 
     <color name="blue_color_code_1">#0288D1</color>
