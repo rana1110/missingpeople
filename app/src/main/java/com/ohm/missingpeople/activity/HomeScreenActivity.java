@@ -10,6 +10,8 @@ import com.ohm.missingpeople.networkoperation.model.AllMissingPeople;
 import com.ohm.missingpeople.networkoperation.model.MissingPeopleDataClass;
 import com.ohm.missingpeople.networkoperation.restclient.ApiClient;
 import com.ohm.missingpeople.networkoperation.restclient.ApiInterface;
+import com.ohm.missingpeople.utils.ISharedPreferenceHelper;
+import com.ohm.missingpeople.utils.SharedPreferenceHelper;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
@@ -27,6 +29,9 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.AdapterView;
+import android.widget.LinearLayout;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 
@@ -36,6 +41,7 @@ import retrofit2.Response;
 
 public class HomeScreenActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemSelectedListener {
     Toolbar toolbar;
+    LinearLayout headerLayout;
     NavigationView navigationView;
     NavigationMenuView navMenuView;
     ActionBarDrawerToggle toggle;
@@ -46,10 +52,21 @@ public class HomeScreenActivity extends AppCompatActivity implements NavigationV
     private RecyclerView recyclerView;
     private AllMissingPersonAdapter adapter;
     RecyclerView.LayoutManager layoutManager;
+    ISharedPreferenceHelper iSharedPreferenceHelper;
+    TextView userName;
+    TextView logOut;
+    View navViewForHeader;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        iSharedPreferenceHelper = new SharedPreferenceHelper(this);
+        if (iSharedPreferenceHelper.getFName() != null && iSharedPreferenceHelper.getLName() != null) {
+            Log.e("test123 ", iSharedPreferenceHelper.getFName());
+            Log.e("test123 ", iSharedPreferenceHelper.getLName());
+            Log.e("test123 ", iSharedPreferenceHelper.getContactNum());
+            Log.e("test123 ", iSharedPreferenceHelper.getToken());
+        }
         loadUI();
         populateData();
 
@@ -57,21 +74,24 @@ public class HomeScreenActivity extends AppCompatActivity implements NavigationV
 
     public void loadUI() {
         setContentView(R.layout.activity_home_screen);
-
         toolbar = findViewById(R.id.toolbar);
         navigationView = findViewById(R.id.nav_view_menu);
         drawer = findViewById(R.id.drawer_layout);
         navMenuView = (NavigationMenuView) navigationView.getChildAt(0);
+        headerLayout = (LinearLayout) HomeScreenActivity.this.findViewById(R.id.headerLayout);
         swipeRefreshLayout = findViewById(R.id.pullToRefresh);
         recyclerView = findViewById(R.id.recycler_view);
         swipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.brandColorCode1));
         layoutManager = new LinearLayoutManager(HomeScreenActivity.this);
+
         navMenuView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
         navigationView.setNavigationItemSelectedListener(HomeScreenActivity.this);
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
         getSupportActionBar().setDisplayShowHomeEnabled(true);
-        toolbar.setTitle("Test");
+        navViewForHeader = navigationView.getHeaderView(0);
+        userName = (TextView) navViewForHeader.findViewById(R.id.user_name);
+        logOut = (TextView) navViewForHeader.findViewById(R.id.logout);
         toggle = new ActionBarDrawerToggle(
                 this, drawer, toolbar, R.string.navigation_drawer_open, R.string.navigation_drawer_close);
         drawer.addDrawerListener(toggle);
@@ -81,8 +101,6 @@ public class HomeScreenActivity extends AppCompatActivity implements NavigationV
         swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
-
-
             }
         });
 
@@ -127,6 +145,7 @@ public class HomeScreenActivity extends AppCompatActivity implements NavigationV
     }
 
     private void populateData() {
+        userName.setText(iSharedPreferenceHelper.getFName() + " " + iSharedPreferenceHelper.getLName());
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
         newsGetDatacall = apiInterface.getMissingPeopleDetail();
         newsGetDatacall.enqueue(new Callback<AllMissingPeople>() {
@@ -149,5 +168,10 @@ public class HomeScreenActivity extends AppCompatActivity implements NavigationV
         adapter = new AllMissingPersonAdapter(empDataList, this);
         recyclerView.setLayoutManager(layoutManager);
         recyclerView.setAdapter(adapter);
+    }
+
+    public void logOutFromApp(View v) {
+        //iSharedPreferenceHelper.deleteLoginCreds();
+        Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
     }
 }

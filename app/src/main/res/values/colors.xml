@@ -1,14 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="brandColorCode1">#004D40</color>
-    <color name="brandColorCode2">#009688</color>
+    <color name="colorPrimary">@color/brandColorCode2</color>
+    <color name="colorPrimaryDark">@color/brandColorCode2</color>
+    <color name="colorAccent">@color/brandColorCode2</color>
+
+    <color name="brandColorCode1">#00838f</color>
+    <color name="brandColorCode2">#006064</color>
     <color name="brandColorCode3">#ffffff</color>
     <color name="brandColorCode4">#ffffff</color>
+    <color name="brandColorCode5">#757575</color>
 
 
-    <color name="colorPrimary">@color/brandColorCode1</color>
-    <color name="colorPrimaryDark">@color/brandColorCode1</color>
-    <color name="colorAccent">@color/brandColorCode1</color>
+    <!--<color name="brandColorCode1">#00838f</color>
+    <color name="brandColorCode2">#006064</color>-->
+
+    <!--<color name="brandColorCode1">#37474F</color>
+    <color name="brandColorCode2">#546E7A</color>-->
+
+    <!--<color name="brandColorCode1">#0D47A1</color>
+    <color name="brandColorCode2">#1565C0</color>-->
+
+
+    <!-- &lt;!&ndash;Register And Login Screen Color Codes&ndash;&gt;
+     <color name="register_brandColorCode1">#FF8F00</color>
+     <color name="register_brandColorCode2">#FFA000</color>
+     <color name="register_brandColorCode3">#ffffff</color>
+     <color name="register_brandColorCode4">#ffffff</color>
+     <color name="register_brandColorCode5">#757575</color>-->
+
+    <!--EditText box colors-->
+    <color name="mtrl_textinput_default_box_stroke_color">@color/brandColorCode3</color>
+
+
 
 
     <color name="blue_color_code_1">#0288D1</color>
@@ -32,4 +55,16 @@
     <color name="toolbarTextColor">@color/white_color_code_1</color>
     <color name="ratingColor">#FFD700</color>
 
+    <color name="inputTextStrokeColor">@color/color_code_3</color>
+    <color name="inputTextBoxBgColor">@color/color_code_2</color>
+    <color name="inputTexthintTextColor">@color/color_code_4</color>
+    <color name="inputTextColor">@color/color_code_4</color>
+
+    <color name="color_code_1">#ccae62</color>
+    <color name="color_code_2">#ffffff</color>
+    <color name="color_code_3">#227093</color>
+    <color name="color_code_4">#485460</color>
+    <color name="color_code_5">#ffffff</color>
+    <color name="color_code_6">#eb3b5a</color>
+    <color name="color_code_7">#020202</color>
 </resources>
