@@ -29,13 +29,6 @@ public class BaseActivity extends AppCompatActivity {
     }
 
     public void showError(String errorMsg) {
-        /*View parentLayout = findViewById(android.R.id.content);
-        parentLayout.setBackgroundColor(ContextCompat.getColor(this, R.color.colorPrimary));
-        parentLayout.setBottom(Gravity.TOP);
-        Snackbar.make(parentLayout, errorMsg, Snackbar.LENGTH_LONG)
-                .setActionTextColor(getResources().getColor(android.R.color.holo_red_light ))
-                .show();*/
-
         Snackbar snackbar = Snackbar.make((ViewGroup) findViewById(android.R.id.content), "", Snackbar.LENGTH_LONG);
         Snackbar.SnackbarLayout layout = (Snackbar.SnackbarLayout) snackbar.getView();
         TextView textView = (TextView) layout.findViewById(R.id.snackbar_text);
@@ -44,10 +37,8 @@ public class BaseActivity extends AppCompatActivity {
         View snackView = mInflater.inflate(R.layout.snackbar_layout, null);
         TextView textViewTop = (TextView) snackView.findViewById(R.id.textview_snackbar_text);
         textViewTop.setText(errorMsg);
-        // textViewTop.setTextColor(Color.WHITE);
         layout.setPadding(0, 0, 0, 0);
         layout.addView(snackView, 0);
-        //layout.setBackgroundColor(getResources().getColor(R.color.color_code_6));
         snackbar.show();
     }
 

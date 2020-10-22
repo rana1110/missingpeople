@@ -57,7 +57,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
-        android:background="@color/brandColorCode3"
+        android:background="@color/brandColorCode2"
         android:fitsSystemWindows="true"
         android:textStyle="bold"
         app:headerLayout="@layout/nav_header"

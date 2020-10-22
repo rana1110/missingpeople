@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MissingPeople</string>
+    <string name="app_name">Missing People</string>
     <string name="action_settings">Settings</string>
     <!-- Strings used for fragments for navigation -->
     <string name="first_fragment_label">First Fragment</string>
@@ -29,7 +29,15 @@
     <string name="enter_new_password">Enter New password</string>
     <string name="enter_confirm_password">Enter Confirm password</string>
 
-
+    <string name="menu_all_news">All Prime News</string>
+    <string name="menu_business">Business</string>
+    <string name="menu_health">Health</string>
+    <string name="menu_entertainment">Entertainment</string>
+    <string name="menu_sport">Sport</string>
+    <string name="menu_science">Science</string>
+    <string name="menu_technology">Technology</string>
+    <string name="menu_feedback">FeedBack</string>
+    <string name="menu_share">Share This App</string>
 
 
     <string name="hello_first_fragment">Hello first fragment</string>

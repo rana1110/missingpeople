@@ -37,7 +37,7 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="NavDrawerTextStyle" parent="Base.TextAppearance.AppCompat">
-        <item name="android:textColor">@color/brandColorCode2</item>
+        <item name="android:textColor">@color/brandColorCode3</item>
         <item name="android:textSize">@dimen/font_size_16</item>
         <item name="android:textStyle">bold</item>
     </style>
