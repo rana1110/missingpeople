@@ -66,6 +66,7 @@ public class HomeScreenActivity extends AppCompatActivity implements NavigationV
             Log.e("test123 ", iSharedPreferenceHelper.getLName());
             Log.e("test123 ", iSharedPreferenceHelper.getContactNum());
             Log.e("test123 ", iSharedPreferenceHelper.getToken());
+            Log.e("test123 ", "" + iSharedPreferenceHelper.checkRememberMe());
         }
         loadUI();
         populateData();

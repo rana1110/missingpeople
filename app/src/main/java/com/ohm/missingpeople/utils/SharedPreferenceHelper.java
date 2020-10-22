@@ -70,4 +70,15 @@ public class SharedPreferenceHelper implements ISharedPreferenceHelper {
     public String getToken() {
         return sharedPreferences.getString(Constants.TOKEN, null);
     }
+
+
+    @Override
+    public boolean checkRememberMe() {
+        return sharedPreferences.getBoolean(Constants.REMEMBERME, false);
+    }
+
+    @Override
+    public void setRememberMe(boolean rememberMe) {
+        editor.putBoolean(Constants.REMEMBERME, rememberMe);
+    }
 }

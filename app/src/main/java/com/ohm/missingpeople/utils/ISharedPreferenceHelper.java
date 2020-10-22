@@ -11,6 +11,8 @@ public interface ISharedPreferenceHelper {
     String getLName();
     String getContactNum();
     String getToken();
+    boolean checkRememberMe();
+    void setRememberMe(boolean rememberMe);
 
 
 

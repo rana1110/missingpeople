@@ -20,7 +20,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:textColor">@color/brandColorCode3</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">@dimen/font_size_20</item>
+        <item name="android:textSize">@dimen/font_size_14</item>
     </style>
 
     <!-- Base application theme. -->

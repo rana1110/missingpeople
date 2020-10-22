@@ -13,6 +13,9 @@ public class Constants {
     public static final String LASTNAME = "lname";
     public static final String CONTACTNUM = "contactnum";
     public static final String TOKEN = "token";
+    public static final String REMEMBERME = "remember";
+
+
 
     //User Login Flags
     public static final String ACTIVE = "active";

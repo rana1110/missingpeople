@@ -21,11 +21,11 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/login_email_address"
-            android:text="rana.ankit.m@gmail.com"
             style="@style/textInputLayoutEditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/enter_email_address" />
+            android:hint="@string/enter_email_address"
+            android:text="rana.ankit.m@gmail.com" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -36,12 +36,12 @@
 
         <com.google.android.material.textfield.TextInputEditText
             android:id="@+id/login_password"
-            android:text="oHm@1110"
-            android:inputType="textPassword"
             style="@style/textInputLayoutEditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/enter_password" />
+            android:hint="@string/enter_password"
+            android:inputType="textPassword"
+            android:text="oHm@1110" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
@@ -80,6 +80,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/dimen_16dp"
+            android:buttonTint="@color/brandColorCode3"
             android:text="Remember Me"
             android:textColor="@color/brandColorCode3"
             android:textSize="@dimen/font_size_14" />

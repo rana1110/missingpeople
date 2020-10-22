@@ -13,9 +13,9 @@
     <string name="button_cancel">Cancel</string>
     <string name="log_out"><u>Log Out</u></string>
 
-    <string name="change_password"><u>Change Password</u></string>
-    <string name="forgot_password"><u>Forgot Password</u></string>
-    <string name="create_account"><u>Create Account</u></string>
+    <string name="change_password"><u>CHANGE PASSWORD</u></string>
+    <string name="forgot_password"><u>FORGOT PASSWORD</u></string>
+    <string name="create_account"><u>CREATE ACCOUNT</u></string>
 
 
 

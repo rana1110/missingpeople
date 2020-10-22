@@ -9,7 +9,7 @@ import com.ohm.missingpeople.activity.HomeScreenActivity;
 
 public class AppUtils {
 
-    public static void openURl(Context context, String url) {
+    /*public static void openURl(Context context, String url) {
         Intent openUrl = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         openUrl.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         MissingPeopleApplication.getInstance().getApplicationContext().startActivity(openUrl);
@@ -20,5 +20,5 @@ public class AppUtils {
         openIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         MissingPeopleApplication.getInstance().getApplicationContext().startActivity(openIntent);
 
-    }
+    }*/
 }
