@@ -17,6 +17,7 @@
             layout="@layout/toolbar"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />
+
         <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent">
@@ -54,6 +55,7 @@
 
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/nav_view_menu"
+        app:itemBackground="@drawable/nav_selectors"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_gravity="start"
@@ -63,29 +65,34 @@
         app:headerLayout="@layout/nav_header"
         app:itemIconTint="@color/brandColorCode3"
         app:itemTextAppearance="@style/NavDrawerTextStyle"
+        android:theme="@style/NavDrawerTextStyleTheme"
         app:menu="@menu/activity_home_screen_drawer">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
 
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:orientation="vertical">
-
-                <!-- <TextView
-                     android:id="@+id/vesrionName"
-                     style="@style/headingTextView"
-                     android:layout_width="match_parent"
-                     android:layout_height="wrap_content"
-                     android:layout_marginBottom="@dimen/dimen_8dp"
-                     android:gravity="center_horizontal"
-                     android:text="@string/version_text" />-->
-
-            </LinearLayout>
-        </RelativeLayout>
     </com.google.android.material.navigation.NavigationView>
 
 </androidx.drawerlayout.widget.DrawerLayout>
+
+<!--
+
+<RelativeLayout
+android:layout_width="match_parent"
+android:layout_height="match_parent">
+
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_alignParentBottom="true"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/vesrionName"
+        style="@style/headingTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_8dp"
+        android:gravity="center_horizontal"
+        android:text="@string/version_text" />
+
+</LinearLayout>
+</RelativeLayout>-->
