@@ -12,12 +12,14 @@
     <string name="button_change_password">Change Password</string>
     <string name="button_cancel">Cancel</string>
     <string name="log_out"><u>Log Out</u></string>
+    <string name="send_email">Send Email</string>
+
+
+
 
     <string name="change_password"><u>CHANGE PASSWORD</u></string>
     <string name="forgot_password"><u>FORGOT PASSWORD</u></string>
     <string name="create_account"><u>CREATE ACCOUNT</u></string>
-
-
 
 
     <string name="enter_first_name">Enter First Name</string>
@@ -29,7 +31,7 @@
     <string name="enter_new_password">Enter New password</string>
     <string name="enter_confirm_password">Enter Confirm password</string>
 
-    <string name="menu_all_news">All Prime News</string>
+    <string name="menu_change_password">Change Password</string>
     <string name="menu_business">Business</string>
     <string name="menu_health">Health</string>
     <string name="menu_entertainment">Entertainment</string>

@@ -1,17 +1,23 @@
 package com.ohm.missingpeople.activity;
 
+import android.app.AlertDialog;
 import android.os.Bundle;
 
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
 
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.ohm.missingpeople.R;
+import com.ohm.missingpeople.networkoperation.model.GeneralModel;
 import com.ohm.missingpeople.networkoperation.model.LoginModel;
 import com.ohm.missingpeople.networkoperation.restclient.ApiClient;
 import com.ohm.missingpeople.networkoperation.restclient.ApiInterface;
+import com.ohm.missingpeople.networkoperation.restclient.NetworkOperationConstants;
 import com.ohm.missingpeople.utils.BaseActivity;
 import com.ohm.missingpeople.utils.Constants;
 import com.ohm.missingpeople.utils.ISharedPreferenceHelper;
@@ -24,12 +30,14 @@ import retrofit2.Response;
 public class LoginActivity extends BaseActivity {
 
     private TextInputLayout textInputLayoutUserName, textInputLayoutPassword;
-    private TextView createAccount, changePassword, forgotPassword;
+    private TextView createAccount, forgotPassword, forgotPasswordDialog;
     private CheckBox rememberMeCheckBox;
     private TextInputEditText emailAddress, password;
+    private Button forgotPasswordBtn;
     ISharedPreferenceHelper iSharedPreferenceHelper;
     ApiInterface apiInterface;
     Call<LoginModel> loginModelCall;
+    Call<GeneralModel> forgotPasswordCall;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -55,11 +63,10 @@ public class LoginActivity extends BaseActivity {
         password = (TextInputEditText) findViewById(R.id.login_password);
         createAccount = (TextView) findViewById(R.id.create_account);
         forgotPassword = (TextView) findViewById(R.id.forgot_password);
-        changePassword = (TextView) findViewById(R.id.change_password);
+//        changePassword = (TextView) findViewById(R.id.change_password);
         rememberMeCheckBox = (CheckBox) findViewById(R.id.remember_me_checkbox);
         textInputLayoutUserName = (TextInputLayout) findViewById(R.id.til_login_email_address);
         textInputLayoutPassword = (TextInputLayout) findViewById(R.id.til_login_password);
-
 
 
     }
@@ -99,9 +106,7 @@ public class LoginActivity extends BaseActivity {
                     response.body().getPhoneno(),
                     response.body().getToken());
             openNewScreen(new HomeScreenActivity());
-        }
-        else
-        {
+        } else {
             emailAddress.setText("");
             password.setText("");
             showError("Wrong Username And Password");
@@ -115,12 +120,8 @@ public class LoginActivity extends BaseActivity {
                 openURl(getApplicationContext(), Constants.CREATE_ACCOUNT);
                 break;
 
-            case R.id.change_password:
-                openURl(getApplicationContext(), Constants.CHANGE_PASSWORD);
-                break;
-
             case R.id.forgot_password:
-                openURl(getApplicationContext(), Constants.FORGOT_PASSWORD);
+                forgotPasswordApiCall(v);
                 break;
             case R.id.login_button:
                 if (emailAddress.getText().toString().isEmpty())
@@ -133,5 +134,48 @@ public class LoginActivity extends BaseActivity {
 
         }
 
+    }
+
+    private void forgotPasswordApiCall(View v) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(LoginActivity.this);
+        ViewGroup viewGroup = findViewById(android.R.id.content);
+        View dialogView = LayoutInflater.from(v.getContext()).inflate(R.layout.forgot_password_layout, viewGroup, false);
+        forgotPasswordBtn = dialogView.findViewById(R.id.forgot_password_button);
+        forgotPasswordDialog = dialogView.findViewById(R.id.forgot_password_email_address);
+        builder.setView(dialogView);
+        final AlertDialog alertDialog = builder.create();
+        alertDialog.show();
+        forgotPasswordBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+
+                apiInterface = ApiClient.getClient().create(ApiInterface.class);
+                forgotPasswordCall = apiInterface.forgotPasswordEmailSend(forgotPasswordDialog.getText().toString());
+                forgotPasswordCall.enqueue(new Callback<GeneralModel>() {
+                    @Override
+                    public void onResponse(Call<GeneralModel> call, Response<GeneralModel> response) {
+                        if (response.body().getMessage().equals(NetworkOperationConstants.FORGOT_PASSWORD_EMAIL_SEND_SUCCESS)) {
+                            try {
+                                showError("Password Link Send to Your Email");
+                                Thread.sleep(1000);
+                                alertDialog.dismiss();
+                            } catch (InterruptedException e) {
+                                e.printStackTrace();
+                            }
+                        } else {
+                            showError("Your Email is not register");
+                        }
+                    }
+
+                    @Override
+                    public void onFailure(Call<GeneralModel> call, Throwable t) {
+                        showError("Something went Wrong Try later");
+                    }
+                });
+
+
+            }
+        });
     }
 }

@@ -20,20 +20,6 @@ public class SharedPreferenceHelper implements ISharedPreferenceHelper {
     }
 
     @Override
-    public void updateLoginCreds(String userName, String userPass) {
-        editor.putString(Constants.USERNAME, userName);
-        editor.putString(Constants.PASSWORD, userPass);
-        editor.commit();
-    }
-
-    @Override
-    public boolean checkLoginCreds() {
-
-        return (!Objects.requireNonNull(sharedPreferences.getString(Constants.USERNAME, null)).isEmpty()
-                && !Objects.requireNonNull(sharedPreferences.getString(Constants.PASSWORD, null)).isEmpty());
-    }
-
-    @Override
     public void deleteLoginCreds() {
         editor.remove(Constants.FIRSTNAME);
         editor.remove(Constants.LASTNAME);
@@ -69,6 +55,12 @@ public class SharedPreferenceHelper implements ISharedPreferenceHelper {
     @Override
     public String getToken() {
         return sharedPreferences.getString(Constants.TOKEN, null);
+    }
+
+    @Override
+    public void setToken(String token) {
+        editor.remove(Constants.TOKEN);
+        editor.putString(Constants.TOKEN, token);
     }
 
 

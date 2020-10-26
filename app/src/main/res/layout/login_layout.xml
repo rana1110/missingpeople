@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:hint="@string/enter_password"
             android:inputType="textPassword"
-            android:text="oHm@1110" />
+            android:text="1234" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <LinearLayout
@@ -106,12 +106,12 @@
         android:text="@string/forgot_password" />
 
 
-    <TextView
+    <!--<TextView
         android:id="@+id/change_password"
         style="@style/textViewStyle"
         android:layout_gravity="center_horizontal"
         android:layout_marginTop="@dimen/dimen_16dp"
         android:gravity="center_horizontal"
         android:onClick="onClickHandler"
-        android:text="@string/change_password" />
+        android:text="@string/change_password" />-->
 </LinearLayout>

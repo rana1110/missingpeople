@@ -10,6 +10,7 @@ import com.ohm.missingpeople.networkoperation.model.AllMissingPeople;
 import com.ohm.missingpeople.networkoperation.model.MissingPeopleDataClass;
 import com.ohm.missingpeople.networkoperation.restclient.ApiClient;
 import com.ohm.missingpeople.networkoperation.restclient.ApiInterface;
+import com.ohm.missingpeople.utils.BaseActivity;
 import com.ohm.missingpeople.utils.ISharedPreferenceHelper;
 import com.ohm.missingpeople.utils.SharedPreferenceHelper;
 
@@ -39,7 +40,7 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
-public class HomeScreenActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemSelectedListener {
+public class HomeScreenActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemSelectedListener {
     Toolbar toolbar;
     LinearLayout headerLayout;
     NavigationView navigationView;
@@ -142,7 +143,15 @@ public class HomeScreenActivity extends AppCompatActivity implements NavigationV
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem menuItem) {
-        return false;
+        int id = menuItem.getItemId();
+        switch (id) {
+            case R.id.nav_change_password:
+                openNewScreen(new ChangePassword());
+                break;
+
+        }
+        drawer.close();
+        return true;
     }
 
     private void populateData() {

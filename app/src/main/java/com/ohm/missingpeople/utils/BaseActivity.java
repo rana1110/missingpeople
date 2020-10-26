@@ -5,10 +5,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.view.Gravity;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.FrameLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
@@ -34,6 +37,9 @@ public class BaseActivity extends AppCompatActivity {
         TextView textView = (TextView) layout.findViewById(R.id.snackbar_text);
         textView.setVisibility(View.INVISIBLE);
         LayoutInflater mInflater = LayoutInflater.from(getApplicationContext());
+        FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) layout.getLayoutParams();
+        params.gravity = Gravity.TOP;
+        layout.setLayoutParams(params);
         View snackView = mInflater.inflate(R.layout.snackbar_layout, null);
         TextView textViewTop = (TextView) snackView.findViewById(R.id.textview_snackbar_text);
         textViewTop.setText(errorMsg);
@@ -46,6 +52,10 @@ public class BaseActivity extends AppCompatActivity {
         Intent openUrl = new Intent(Intent.ACTION_VIEW, Uri.parse(url));
         openUrl.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(openUrl);
+    }
+
+    public void showToast(String errorMsg) {
+        Toast.makeText(getApplicationContext(), errorMsg, Toast.LENGTH_SHORT).show();
     }
 
     public void openNewScreen(Activity screenName) {

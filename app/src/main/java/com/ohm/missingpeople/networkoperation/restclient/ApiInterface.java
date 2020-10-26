@@ -1,6 +1,8 @@
 package com.ohm.missingpeople.networkoperation.restclient;
 
 import com.ohm.missingpeople.networkoperation.model.AllMissingPeople;
+import com.ohm.missingpeople.networkoperation.model.ChangePasswordModel;
+import com.ohm.missingpeople.networkoperation.model.GeneralModel;
 import com.ohm.missingpeople.networkoperation.model.LoginModel;
 
 import retrofit2.Call;
@@ -17,4 +19,9 @@ public interface ApiInterface {
     Call<LoginModel> getLoginToApp(@Query("email") String emailAddress, @Query("password") String password);
 
 
+    @GET("/api/missingperson/Changepassword")
+    Call<ChangePasswordModel> changePassword(@Query("token") String token, @Query("password") String password);
+
+    @GET("/api/missingperson/sendemailforgotpwd")
+    Call<GeneralModel> forgotPasswordEmailSend(@Query("email") String emailAddress);
 }
