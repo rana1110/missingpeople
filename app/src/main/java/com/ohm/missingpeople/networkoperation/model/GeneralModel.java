@@ -15,6 +15,9 @@ public class GeneralModel {
     @Expose
     private String token;
 
+
+
+
     public String getStatus() {
         return status;
     }

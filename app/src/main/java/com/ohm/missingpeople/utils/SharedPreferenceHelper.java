@@ -25,6 +25,7 @@ public class SharedPreferenceHelper implements ISharedPreferenceHelper {
         editor.remove(Constants.LASTNAME);
         editor.remove(Constants.CONTACTNUM);
         editor.remove(Constants.TOKEN);
+        editor.remove(Constants.REMEMBERME);
         editor.commit();
     }
 

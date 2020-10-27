@@ -38,6 +38,23 @@ public class BaseActivity extends AppCompatActivity {
         textView.setVisibility(View.INVISIBLE);
         LayoutInflater mInflater = LayoutInflater.from(getApplicationContext());
         FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) layout.getLayoutParams();
+        params.gravity = Gravity.BOTTOM;
+        layout.setLayoutParams(params);
+        View snackView = mInflater.inflate(R.layout.snackbar_layout, null);
+        TextView textViewTop = (TextView) snackView.findViewById(R.id.textview_snackbar_text);
+        textViewTop.setText(errorMsg);
+        layout.setPadding(0, 0, 0, 0);
+        layout.addView(snackView, 0);
+        snackbar.show();
+    }
+
+    public void showErrorForDialogLayout(String errorMsg) {
+        Snackbar snackbar = Snackbar.make((ViewGroup) findViewById(android.R.id.content), "", Snackbar.LENGTH_LONG);
+        Snackbar.SnackbarLayout layout = (Snackbar.SnackbarLayout) snackbar.getView();
+        TextView textView = (TextView) layout.findViewById(R.id.snackbar_text);
+        textView.setVisibility(View.INVISIBLE);
+        LayoutInflater mInflater = LayoutInflater.from(getApplicationContext());
+        FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) layout.getLayoutParams();
         params.gravity = Gravity.TOP;
         layout.setLayoutParams(params);
         View snackView = mInflater.inflate(R.layout.snackbar_layout, null);

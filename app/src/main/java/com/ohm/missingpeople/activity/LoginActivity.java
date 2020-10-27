@@ -155,22 +155,18 @@ public class LoginActivity extends BaseActivity {
                 forgotPasswordCall.enqueue(new Callback<GeneralModel>() {
                     @Override
                     public void onResponse(Call<GeneralModel> call, Response<GeneralModel> response) {
+
                         if (response.body().getMessage().equals(NetworkOperationConstants.FORGOT_PASSWORD_EMAIL_SEND_SUCCESS)) {
-                            try {
-                                showError("Password Link Send to Your Email");
-                                Thread.sleep(1000);
-                                alertDialog.dismiss();
-                            } catch (InterruptedException e) {
-                                e.printStackTrace();
-                            }
-                        } else {
-                            showError("Your Email is not register");
+                            showErrorForDialogLayout("Password Link Send to Your Email");
+                            alertDialog.dismiss();
+                        }  else {
+                            showErrorForDialogLayout("Your Email is not register");
                         }
                     }
 
                     @Override
                     public void onFailure(Call<GeneralModel> call, Throwable t) {
-                        showError("Something went Wrong Try later");
+                        showErrorForDialogLayout("Something went Wrong Try later");
                     }
                 });
 

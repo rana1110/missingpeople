@@ -47,7 +47,7 @@
             android:name=".activity.ForgotPasswordActivity"
             android:label="OTP"
             android:theme="@style/AppTheme.NoActionBar">
-            <intent-filter>
+            <intent-filter android:autoVerify="true">
                 <action android:name="android.intent.action.VIEW" />
 
                 <category android:name="android.intent.category.DEFAULT" />
@@ -57,6 +57,7 @@
                     android:host="www.missingppl.com"
                     android:pathPrefix="/"
                     android:scheme="https" />
+                <data android:scheme="app" android:host="com.ohm.missingpeople" />
             </intent-filter>
         </activity>
     </application>
