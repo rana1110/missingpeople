@@ -71,6 +71,7 @@ public class HomeScreenActivity extends BaseActivity implements NavigationView.O
         }
         loadUI();
         populateData();
+        hideDialog();
 
     }
 

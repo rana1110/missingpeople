@@ -1,8 +1,10 @@
 package com.ohm.missingpeople.utils;
 
 import android.app.Activity;
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.content.pm.ActivityInfo;
 import android.net.Uri;
 import android.os.Bundle;
 import android.view.Gravity;
@@ -19,11 +21,37 @@ import androidx.appcompat.app.AppCompatActivity;
 import com.google.android.material.snackbar.Snackbar;
 import com.ohm.missingpeople.R;
 
+import java.util.regex.Pattern;
+
 public class BaseActivity extends AppCompatActivity {
+    ProgressDialog mProgressDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
+        mProgressDialog = new ProgressDialog(this, R.style.myAlertDialogStyle);
+        setUpProgressDialog();
+
+    }
+
+    public void setUpProgressDialog() {
+        mProgressDialog.setIndeterminate(true);
+        mProgressDialog.setMessage("Please Wait...");
+        mProgressDialog.setProgressStyle(ProgressDialog.STYLE_SPINNER);
+        mProgressDialog.setCanceledOnTouchOutside(false);
+    }
+
+    public void showDialog() {
+
+        if (mProgressDialog != null && !mProgressDialog.isShowing())
+            mProgressDialog.show();
+    }
+
+    public void hideDialog() {
+
+        if (mProgressDialog != null && mProgressDialog.isShowing())
+            mProgressDialog.dismiss();
     }
 
     @Override
@@ -38,7 +66,7 @@ public class BaseActivity extends AppCompatActivity {
         textView.setVisibility(View.INVISIBLE);
         LayoutInflater mInflater = LayoutInflater.from(getApplicationContext());
         FrameLayout.LayoutParams params = (FrameLayout.LayoutParams) layout.getLayoutParams();
-        params.gravity = Gravity.BOTTOM;
+        params.gravity = Gravity.TOP;
         layout.setLayoutParams(params);
         View snackView = mInflater.inflate(R.layout.snackbar_layout, null);
         TextView textViewTop = (TextView) snackView.findViewById(R.id.textview_snackbar_text);
@@ -80,4 +108,23 @@ public class BaseActivity extends AppCompatActivity {
         openIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(openIntent);
     }
+    public void makeScreenHolds(int timeInSec)
+    {
+        try {
+            Thread.sleep(timeInSec*1000);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public boolean isValidEmailAddress(String email) {
+        return Pattern.compile("^(([\\w-]+\\.)+[\\w-]+|([a-zA-Z]{1}|[\\w-]{2,}))@"
+                + "((([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                + "[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\."
+                + "([0-1]?[0-9]{1,2}|25[0-5]|2[0-4][0-9])\\.([0-1]?"
+                + "[0-9]{1,2}|25[0-5]|2[0-4][0-9])){1}|"
+                + "([a-zA-Z]+[\\w-]+\\.)+[a-zA-Z]{2,4})$").matcher(email).matches();
+    }
+
 }

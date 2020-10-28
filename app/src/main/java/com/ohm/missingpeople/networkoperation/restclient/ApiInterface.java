@@ -4,6 +4,7 @@ import com.ohm.missingpeople.networkoperation.model.AllMissingPeople;
 import com.ohm.missingpeople.networkoperation.model.ChangePasswordModel;
 import com.ohm.missingpeople.networkoperation.model.GeneralModel;
 import com.ohm.missingpeople.networkoperation.model.LoginModel;
+import com.ohm.missingpeople.networkoperation.model.TokenCheckerModel;
 
 import retrofit2.Call;
 import retrofit2.http.GET;
@@ -24,4 +25,8 @@ public interface ApiInterface {
 
     @GET("/api/missingperson/sendemailforgotpwd")
     Call<GeneralModel> forgotPasswordEmailSend(@Query("email") String emailAddress);
+
+    @GET("/api/missingperson/Usercredentialbytoken")
+    Call<TokenCheckerModel> tokenChecker(@Query("token") String token);
+
 }

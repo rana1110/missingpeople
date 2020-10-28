@@ -21,4 +21,10 @@ public class AppUtils {
         MissingPeopleApplication.getInstance().getApplicationContext().startActivity(openIntent);
 
     }*/
+    public static boolean checkForEmptyOrNull(String strText) {
+        if (strText.isEmpty())
+            return false;
+        else
+            return true;
+    }
 }

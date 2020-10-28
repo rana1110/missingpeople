@@ -16,18 +16,24 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity
-            android:name=".activity.ChangePassword"
-            android:screenOrientation="portrait"
-            android:theme="@style/AppTheme.NoActionBar" />
-        <activity
-            android:name=".activity.LoginActivity"
-            android:label="@string/title_activity_login_and_registration"
-            android:screenOrientation="portrait"
+            android:name=".activity.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+        </activity>
+        <activity
+            android:name=".activity.ChangePassword"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".activity.LoginActivity"
+            android:label="@string/title_activity_login_and_registration"
+            android:theme="@style/AppTheme.NoActionBar">
+            <!--<intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>-->
         </activity>
         <activity
             android:name=".activity.HomeScreenActivity"
@@ -57,7 +63,9 @@
                     android:host="www.missingppl.com"
                     android:pathPrefix="/"
                     android:scheme="https" />
-                <data android:scheme="app" android:host="com.ohm.missingpeople" />
+                <data
+                    android:host="com.ohm.missingpeople"
+                    android:scheme="app" />
             </intent-filter>
         </activity>
     </application>

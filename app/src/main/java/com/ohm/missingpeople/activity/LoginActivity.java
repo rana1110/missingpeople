@@ -15,6 +15,7 @@ import com.google.android.material.textfield.TextInputLayout;
 import com.ohm.missingpeople.R;
 import com.ohm.missingpeople.networkoperation.model.GeneralModel;
 import com.ohm.missingpeople.networkoperation.model.LoginModel;
+import com.ohm.missingpeople.networkoperation.model.TokenCheckerModel;
 import com.ohm.missingpeople.networkoperation.restclient.ApiClient;
 import com.ohm.missingpeople.networkoperation.restclient.ApiInterface;
 import com.ohm.missingpeople.networkoperation.restclient.NetworkOperationConstants;
@@ -38,6 +39,7 @@ public class LoginActivity extends BaseActivity {
     ApiInterface apiInterface;
     Call<LoginModel> loginModelCall;
     Call<GeneralModel> forgotPasswordCall;
+    Call<TokenCheckerModel> tokenCheckerModelCall;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,16 +47,6 @@ public class LoginActivity extends BaseActivity {
         iSharedPreferenceHelper = new SharedPreferenceHelper(this);
         setContentView(R.layout.activity_login);
         initView();
-
-        /*if (iSharedPreferenceHelper.checkRememberMe())
-        {
-
-        }
-        else {
-            setContentView(R.layout.activity_login);
-            initView();
-        }*/
-
     }
 
     private void initView() {
@@ -71,13 +63,9 @@ public class LoginActivity extends BaseActivity {
 
     }
 
-    private void useTokenValidationService() {
-
-    }
-
 
     private void loginToApp() {
-        iSharedPreferenceHelper.deleteLoginCreds();
+        showDialog();
         apiInterface = ApiClient.getClient().create(ApiInterface.class);
         loginModelCall = apiInterface.getLoginToApp(emailAddress.getText().toString().trim(), password.getText().toString().trim());
         loginModelCall.enqueue(new Callback<LoginModel>() {
@@ -119,13 +107,12 @@ public class LoginActivity extends BaseActivity {
             case R.id.create_account:
                 openURl(getApplicationContext(), Constants.CREATE_ACCOUNT);
                 break;
-
             case R.id.forgot_password:
                 forgotPasswordApiCall(v);
                 break;
             case R.id.login_button:
-                if (emailAddress.getText().toString().isEmpty())
-                    showError("Enter email Address");
+                if (emailAddress.getText().toString().isEmpty() || !isValidEmailAddress(emailAddress.getText().toString().trim()))
+                    showError("Enter Valid email Address");
                 else if (password.getText().toString().isEmpty())
                     showError("Enter Password");
                 else
@@ -159,7 +146,7 @@ public class LoginActivity extends BaseActivity {
                         if (response.body().getMessage().equals(NetworkOperationConstants.FORGOT_PASSWORD_EMAIL_SEND_SUCCESS)) {
                             showErrorForDialogLayout("Password Link Send to Your Email");
                             alertDialog.dismiss();
-                        }  else {
+                        } else {
                             showErrorForDialogLayout("Your Email is not register");
                         }
                     }

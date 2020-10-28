@@ -55,6 +55,7 @@ public class SharedPreferenceHelper implements ISharedPreferenceHelper {
 
     @Override
     public String getToken() {
+
         return sharedPreferences.getString(Constants.TOKEN, null);
     }
 
