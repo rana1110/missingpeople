@@ -1,6 +1,4 @@
-package com.ohm.missingpeople.activity;
-
-import androidx.appcompat.app.AppCompatActivity;
+package com.ohm.missingpeople.activity.authentication;
 
 import android.os.Bundle;
 import android.text.Editable;
@@ -11,7 +9,6 @@ import android.view.View;
 import com.google.android.material.textfield.TextInputEditText;
 import com.ohm.missingpeople.R;
 import com.ohm.missingpeople.networkoperation.model.ChangePasswordModel;
-import com.ohm.missingpeople.networkoperation.model.LoginModel;
 import com.ohm.missingpeople.networkoperation.restclient.ApiClient;
 import com.ohm.missingpeople.networkoperation.restclient.ApiInterface;
 import com.ohm.missingpeople.utils.BaseActivity;

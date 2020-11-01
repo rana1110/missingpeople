@@ -4,6 +4,7 @@ import com.ohm.missingpeople.networkoperation.model.AllMissingPeople;
 import com.ohm.missingpeople.networkoperation.model.ChangePasswordModel;
 import com.ohm.missingpeople.networkoperation.model.GeneralModel;
 import com.ohm.missingpeople.networkoperation.model.LoginModel;
+import com.ohm.missingpeople.networkoperation.model.RegistrationModel;
 import com.ohm.missingpeople.networkoperation.model.TokenCheckerModel;
 
 import retrofit2.Call;
@@ -28,5 +29,12 @@ public interface ApiInterface {
 
     @GET("/api/missingperson/Usercredentialbytoken")
     Call<TokenCheckerModel> tokenChecker(@Query("token") String token);
+
+    @GET("/api/missingperson/Registration")
+    Call<RegistrationModel> registrationCall(@Query("fname") String fName,
+                                             @Query("lname") String lName,
+                                             @Query("UserID") String emailAddress,
+                                             @Query("password") String pass);
+
 
 }

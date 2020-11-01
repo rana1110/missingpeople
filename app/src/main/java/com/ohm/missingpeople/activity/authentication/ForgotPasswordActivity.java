@@ -1,4 +1,4 @@
-package com.ohm.missingpeople.activity;
+package com.ohm.missingpeople.activity.authentication;
 
 import android.net.Uri;
 import android.os.Bundle;
@@ -15,7 +15,6 @@ import com.ohm.missingpeople.networkoperation.restclient.ApiClient;
 import com.ohm.missingpeople.networkoperation.restclient.ApiInterface;
 import com.ohm.missingpeople.utils.BaseActivity;
 import com.ohm.missingpeople.utils.ISharedPreferenceHelper;
-import com.ohm.missingpeople.utils.Logger;
 import com.ohm.missingpeople.utils.SharedPreferenceHelper;
 
 import retrofit2.Call;

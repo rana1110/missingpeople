@@ -5,6 +5,7 @@ import android.os.Bundle;
 import com.google.android.material.internal.NavigationMenuView;
 import com.google.android.material.navigation.NavigationView;
 import com.ohm.missingpeople.R;
+import com.ohm.missingpeople.activity.authentication.ChangePassword;
 import com.ohm.missingpeople.adapter.AllMissingPersonAdapter;
 import com.ohm.missingpeople.networkoperation.model.AllMissingPeople;
 import com.ohm.missingpeople.networkoperation.model.MissingPeopleDataClass;
@@ -16,7 +17,6 @@ import com.ohm.missingpeople.utils.SharedPreferenceHelper;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.ActionBarDrawerToggle;
-import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.recyclerview.widget.DividerItemDecoration;

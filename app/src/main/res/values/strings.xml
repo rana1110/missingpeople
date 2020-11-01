@@ -8,7 +8,7 @@
     <string name="previous">Previous</string>
 
     <string name="button_sign_in">LOG IN</string>
-    <string name="button_register">Register</string>
+    <string name="button_create_account">Create Account</string>
     <string name="button_change_password">Change Password</string>
     <string name="button_cancel">Cancel</string>
     <string name="log_out"><u>Log Out</u></string>

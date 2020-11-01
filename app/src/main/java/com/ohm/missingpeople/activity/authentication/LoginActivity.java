@@ -1,4 +1,4 @@
-package com.ohm.missingpeople.activity;
+package com.ohm.missingpeople.activity.authentication;
 
 import android.app.AlertDialog;
 import android.os.Bundle;
@@ -13,6 +13,7 @@ import android.widget.TextView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 import com.ohm.missingpeople.R;
+import com.ohm.missingpeople.activity.HomeScreenActivity;
 import com.ohm.missingpeople.networkoperation.model.GeneralModel;
 import com.ohm.missingpeople.networkoperation.model.LoginModel;
 import com.ohm.missingpeople.networkoperation.model.TokenCheckerModel;
@@ -99,13 +100,15 @@ public class LoginActivity extends BaseActivity {
             password.setText("");
             showError("Wrong Username And Password");
             emailAddress.requestFocus();
+
         }
+        hideDialog();
     }
 
     public void onClickHandler(View v) {
         switch (v.getId()) {
             case R.id.create_account:
-                openURl(getApplicationContext(), Constants.CREATE_ACCOUNT);
+                openNewScreen(new CreateAccountActivity());
                 break;
             case R.id.forgot_password:
                 forgotPasswordApiCall(v);

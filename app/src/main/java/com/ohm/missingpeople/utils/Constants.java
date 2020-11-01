@@ -15,6 +15,13 @@ public class Constants {
     public static final String TOKEN = "token";
     public static final String REMEMBERME = "remember";
 
+    public static final String FISRT_NAME_ERROR="Enter First name";
+    public static final String LAST_NAME_ERROR="Enter Last name";
+    public static final String EMAIL_ADDRESS_ERROR="Enter Email Address";
+    public static final String PASSWORD_ERROR="Enter Password";
+    public static final String MOBILE_ERROR="Enter Valid Mobile";
+
+
 
 
     //User Login Flags

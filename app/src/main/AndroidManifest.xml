@@ -18,16 +18,23 @@
         <activity
             android:name=".activity.SplashActivity"
             android:theme="@style/AppTheme.NoActionBar">
+
+        </activity>
+
+        <activity
+            android:name=".activity.authentication.CreateAccountActivity"
+            android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
         <activity
-            android:name=".activity.ChangePassword"
+            android:name=".activity.authentication.ChangePassword"
             android:theme="@style/AppTheme.NoActionBar" />
         <activity
-            android:name=".activity.LoginActivity"
+            android:name=".activity.authentication.LoginActivity"
             android:label="@string/title_activity_login_and_registration"
             android:theme="@style/AppTheme.NoActionBar">
             <!--<intent-filter>
@@ -50,7 +57,7 @@
             -->
         </activity>
         <activity
-            android:name=".activity.ForgotPasswordActivity"
+            android:name=".activity.authentication.ForgotPasswordActivity"
             android:label="OTP"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter android:autoVerify="true">
