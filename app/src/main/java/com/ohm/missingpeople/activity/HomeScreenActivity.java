@@ -47,7 +47,7 @@ public class HomeScreenActivity extends BaseActivity implements NavigationView.O
     NavigationMenuView navMenuView;
     ActionBarDrawerToggle toggle;
     DrawerLayout drawer;
-    private SwipeRefreshLayout swipeRefreshLayout;
+    //private SwipeRefreshLayout swipeRefreshLayout;
     ApiInterface apiInterface;
     Call<AllMissingPeople> newsGetDatacall;
     private RecyclerView recyclerView;
@@ -82,9 +82,9 @@ public class HomeScreenActivity extends BaseActivity implements NavigationView.O
         drawer = findViewById(R.id.drawer_layout);
         navMenuView = (NavigationMenuView) navigationView.getChildAt(0);
         headerLayout = (LinearLayout) HomeScreenActivity.this.findViewById(R.id.headerLayout);
-        swipeRefreshLayout = findViewById(R.id.pullToRefresh);
+      //  swipeRefreshLayout = findViewById(R.id.pullToRefresh);
         recyclerView = findViewById(R.id.recycler_view);
-        swipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.brandColorCode1));
+       // swipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.brandColorCode1));
         layoutManager = new LinearLayoutManager(HomeScreenActivity.this);
 
         navMenuView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
@@ -101,11 +101,11 @@ public class HomeScreenActivity extends BaseActivity implements NavigationView.O
         toggle.syncState();
         toggle.getDrawerArrowDrawable().setColor(getResources().getColor(R.color.navigationToggleColor));
 
-        swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+        /*swipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
             @Override
             public void onRefresh() {
             }
-        });
+        });*/
 
 
     }

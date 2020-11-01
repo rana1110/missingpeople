@@ -96,7 +96,7 @@
     </style>
 
     <style name="recyclerTextViewStyle" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">@color/brandColorCode3</item>
+        <item name="android:textColor">@drawable/button_text_color</item>
         <item name="android:textSize">@dimen/font_size_16</item>
         <item name="android:textStyle">bold</item>
     </style>
