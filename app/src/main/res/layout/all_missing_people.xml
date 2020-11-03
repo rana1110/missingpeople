@@ -1,29 +1,22 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/all_misssing_people_layout"
     android:layout_width="match_parent"
-    android:layout_height="@dimen/dimen_104dp"
+    android:layout_height="wrap_content"
     android:layout_marginLeft="@dimen/dimen_8dp"
     android:layout_marginRight="@dimen/dimen_8dp"
     android:layout_marginBottom="@dimen/dimen_8dp"
-    android:background="@drawable/recyclerview_round_background"
-    android:orientation="horizontal">
+    android:background="@drawable/recyclerview_round_background">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:orientation="vertical">
 
-        <ImageView
+    <ImageView
         android:id="@+id/newsImageView"
         android:layout_width="@dimen/dimen_104dp"
         android:layout_height="@dimen/dimen_104dp"
         android:layout_gravity="center"
         android:adjustViewBounds="true"
-        android:scaleType="centerCrop" />
-    </LinearLayout>
+        android:scaleType="centerCrop"
+        android:src="@mipmap/image_not_found" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -31,7 +24,7 @@
         android:layout_marginLeft="@dimen/dimen_16dp"
         android:layout_marginTop="@dimen/dimen_8dp"
         android:layout_marginBottom="@dimen/dimen_8dp"
-        android:layout_weight="1"
+        android:layout_toRightOf="@+id/newsImageView"
         android:orientation="vertical">
 
         <TextView
@@ -39,6 +32,9 @@
             style="@style/recyclerTextViewStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Ankitkumar Rana Rana Ankitkumar Rana Rana"
             android:textSize="@dimen/font_size_20" />
 
         <TextView
@@ -46,14 +42,10 @@
             style="@style/recyclerTextViewStyle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="3"
             android:textStyle="normal" />
 
-        <!-- <TextView
-             android:id="@+id/personMissingDate"
-             style="@style/recyclerTextViewStyle"
-             android:layout_width="wrap_content"
-             android:layout_height="wrap_content" />
- -->
         <!--<TextView
             android:id="@+id/personContactDetails"
             style="@style/recyclerTextViewStyle"
@@ -63,11 +55,12 @@
     </LinearLayout>
 
     <LinearLayout
+        android:id="@+id/call_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_gravity="center_vertical|end"
         android:layout_marginRight="@dimen/dimen_16dp"
-        android:layout_weight="2.5"
+        android:layout_below="@+id/newsImageView"
         android:orientation="vertical"
         android:visibility="gone">
 
@@ -87,4 +80,4 @@
             android:src="@drawable/share_icon" />
     </LinearLayout>
 
-</LinearLayout>
+</RelativeLayout>

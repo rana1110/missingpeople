@@ -20,6 +20,8 @@
 
     <dimen name="dimen_200dp">200dp</dimen>
 
+    <dimen name="dimen_320dp">320dp</dimen>
+
 
 
     <dimen name="font_size_8">8sp</dimen>

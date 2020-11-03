@@ -1,20 +1,26 @@
 package com.ohm.missingpeople.adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
+import android.content.Intent;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.ohm.missingpeople.R;
+import com.ohm.missingpeople.activity.SinglePersonDetailView;
 import com.ohm.missingpeople.networkoperation.model.MissingPeopleDataClass;
+import com.ohm.missingpeople.utils.Constants;
 
 import java.util.ArrayList;
 
@@ -22,6 +28,7 @@ public class AllMissingPersonAdapter extends RecyclerView.Adapter<AllMissingPers
 
     private ArrayList<MissingPeopleDataClass> dataList;
     private Context context;
+    private boolean layoutFlag = false;
 
 
     public AllMissingPersonAdapter(ArrayList<MissingPeopleDataClass> dataList, Context context) {
@@ -32,39 +39,72 @@ public class AllMissingPersonAdapter extends RecyclerView.Adapter<AllMissingPers
     @Override
     public AllMissingPersonViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         LayoutInflater layoutInflater = LayoutInflater.from(parent.getContext());
-        View view = layoutInflater.inflate(R.layout.all_missing_people_data_list, parent, false);
+        View view = layoutInflater.inflate(R.layout.all_missing_people, parent, false);
         return new AllMissingPersonViewHolder(view);
     }
 
+    @SuppressLint("SetTextI18n")
     @Override
-    public void onBindViewHolder(AllMissingPersonViewHolder holder, final int position) {
+    public void onBindViewHolder(final AllMissingPersonViewHolder holder, final int position) {
         holder.personName.setText(dataList.get(position).getName());
-        holder.personMissingFrom.setText("is missing from "+dataList.get(position).getMissingFrom()
-                                        +","+dataList.get(position).getCity()+","+dataList.get(position).getState()
-        +" on "+dataList.get(position).getMissingSince()+".");
-       // holder.personMissingDate.setText("Missing Date - "+dataList.get(position).getMissingSince());
-       // holder.personContactDetail.setText(dataList.get(position).getContactdetail());
+        holder.personMissingFrom.setText("Missing from " + dataList.get(position).getMissingFrom()
+                + ", " + dataList.get(position).getCity() + ", " + dataList.get(position).getState()
+                + " On " + dataList.get(position).getMissingSince() + ". " + position);
+        // holder.personMissingDate.setText("Missing Date - "+dataList.get(position).getMissingSince());
+        // holder.personContactDetail.setText(dataList.get(position).getContactdetail());
 
-        Glide.with(context).load("http://missingppl.com/Picture/"+dataList.get(position).getPicture())
-                .placeholder(R.drawable.call_icon)
+        Glide.with(context).load("http://missingppl.com/Picture/" + dataList.get(position).getPicture())
+                .placeholder(R.mipmap.image_not_found)
                 .diskCacheStrategy(DiskCacheStrategy.ALL)
                 .skipMemoryCache(true)
                 .into(holder.imageView);
 
 
-        holder.callImageView.setOnClickListener(new View.OnClickListener() {
+       /* holder.callImageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Toast.makeText(context, "Call Click", Toast.LENGTH_SHORT).show();
             }
-        });
+        });*/
 
-        holder.shareImageView.setOnClickListener(new View.OnClickListener() {
+
+        holder.allMissingPeopleLayout.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(context, "Share Click", Toast.LENGTH_SHORT).show();
+                try {
+                    Intent singlePerson = new Intent(context, SinglePersonDetailView.class);
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_ID, position);
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_NAME, dataList.get(position).getName());
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_FATHER_NAME, dataList.get(position).getFathername());
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_MOTHER_NAME, dataList.get(position).getMothername());
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_GENDER, dataList.get(position).getGender());
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_AGE, dataList.get(position).getAge());
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_HEIGHT, dataList.get(position).getHeight());
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_WEIGHT, dataList.get(position).getWeight());
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_EYE_COLOR, dataList.get(position).getEyesColor());
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_HAIR_COLOR, dataList.get(position).getHairColor());
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_PICTURE_NAME, "http://missingppl.com/Picture/" + dataList.get(position).getPicture());
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_LAST_SEEN, dataList.get(position).getLastseen());
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_MISSING_FROM, dataList.get(position).getMissingFrom());
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_MISSING_SINCE, dataList.get(position).getMissingSince());
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_IDENTITY_MARK, dataList.get(position).getIdentityMark());
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_DESCRIPTION, dataList.get(position).getDescription());
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_POSTED_BY, dataList.get(position).getPostedby());
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_CONTACT_MOBILE, dataList.get(position).getContactdetail());
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_CITY, dataList.get(position).getCity());
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_STATE, dataList.get(position).getState());
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_COUNTRY, dataList.get(position).getCountry());
+
+
+                    singlePerson.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+                    context.startActivity(singlePerson);
+                } catch (Exception e) {
+                    Log.e("test123", e.getMessage().toString());
+                }
             }
         });
+
+
 
        /* holder.txtTitle.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -92,18 +132,21 @@ public class AllMissingPersonAdapter extends RecyclerView.Adapter<AllMissingPers
 
         TextView personName, personMissingFrom, personMissingDate, personContactDetail;
         ImageView imageView, callImageView, shareImageView;
+        RelativeLayout allMissingPeopleLayout;
+        LinearLayout callLayout;
         Button shareButton;
 
         AllMissingPersonViewHolder(View itemView) {
             super(itemView);
             personName = itemView.findViewById(R.id.personName);
             personMissingFrom = itemView.findViewById(R.id.personMissingFrom);
-          //  personMissingDate = itemView.findViewById(R.id.personMissingDate);
-        //    personContactDetail = itemView.findViewById(R.id.personContactDetails);
+            //  personMissingDate = itemView.findViewById(R.id.personMissingDate);
+            //    personContactDetail = itemView.findViewById(R.id.personContactDetails);
             imageView = itemView.findViewById(R.id.newsImageView);
             callImageView = itemView.findViewById(R.id.callIconImageButton);
             shareImageView = itemView.findViewById(R.id.shareIconImageButton);
-
+            allMissingPeopleLayout = itemView.findViewById(R.id.all_misssing_people_layout);
+            callLayout = itemView.findViewById(R.id.call_layout);
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
