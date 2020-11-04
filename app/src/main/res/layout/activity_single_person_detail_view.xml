@@ -8,8 +8,9 @@
     <androidx.core.widget.NestedScrollView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/dimen_8dp"
+        android:layout_weight="1"
         android:fillViewport="true"
-        android:layout_marginBottom="@dimen/dimen_24dp"
         android:scrollbars="none">
 
         <LinearLayout
@@ -28,20 +29,45 @@
                 android:layout_marginRight="@dimen/dimen_24dp"
                 android:adjustViewBounds="true"
                 android:scaleType="centerCrop"
-                android:src="@mipmap/india" />
+                android:src="@drawable/line_arrow" />
 
-            <LinearLayout style="@style/linearLayoutStyle">
+            <TextView
+                android:id="@+id/single_person_name"
+                style="@style/singlePersonTextViewBoldStyle"
+                android:text="Ankitkumar Rana" />
+
+            <LinearLayout
+                android:layout_width="fill_parent"
+                android:layout_height="fill_parent"
+                android:layout_marginLeft="@dimen/dimen_16dp"
+                android:layout_marginTop="@dimen/dimen_24dp"
+                android:layout_marginRight="@dimen/dimen_16dp"
+                android:background="@drawable/alert_text_background"
+                android:orientation="vertical">
 
                 <TextView
                     style="@style/singlePersonTextViewStyle"
-                    android:text="Name" />
-
-                <ImageView style="@style/imageStyle" />
+                    android:layout_marginLeft="@dimen/dimen_16dp"
+                    android:layout_marginTop="@dimen/dimen_8dp"
+                    android:layout_marginRight="@dimen/dimen_8dp"
+                    android:text="@string/notes" />
 
                 <TextView
-                    android:id="@+id/single_person_name"
-                    style="@style/singlePersonTextViewBoldStyle"
-                    android:text="Ankitkumar Rana" />
+                    android:id="@+id/single_person_alert_text"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="@dimen/dimen_16dp"
+                    android:layout_marginTop="@dimen/dimen_8dp"
+                    android:layout_marginRight="@dimen/dimen_8dp"
+                    android:background="@drawable/alert_text_background"
+                    android:maxLines="20"
+                    android:padding="@dimen/dimen_8dp"
+                    android:text="Ankitkumar Rana is missing from Malydhara Ankitkumar Rana is missing from Malydhara Ankitkumar Rana is missing from Malydhara Ankitkumar Rana is missing from Malydhara,Dungari,checkpost Ankitkumar Rana is missing from Malydhara,Dungari,checkpost Ankitkumar Rana is missing from Malydhara,Dungari,checkpost Ankitkumar Rana is missing from Malydhara,Dungari,checkpost "
+                    android:textAlignment="center"
+                    android:textColor="@color/brandColorCode7"
+                    android:textSize="@dimen/font_size_16"
+                    android:textStyle="bold" />
+
             </LinearLayout>
 
             <LinearLayout style="@style/linearLayoutStyle">
@@ -209,15 +235,35 @@
 
                 <TextView
                     style="@style/singlePersonTextViewStyle"
-                    android:text="City,State" />
+                    android:text="City and State" />
 
                 <ImageView style="@style/imageStyle" />
 
                 <TextView
                     android:id="@+id/single_person_city_state"
                     style="@style/singlePersonTextViewBoldStyle"
-                    android:text="Valsad , Gujarat" />
+                    android:text="Valsad Gujarat" />
             </LinearLayout>
         </LinearLayout>
     </androidx.core.widget.NestedScrollView>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:background="@color/brandColorCode2"
+        android:layout_height="@dimen/dimen_56dp"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/single_person_comment_button"
+            style="@style/bottomButtonStyle"
+            android:text="@string/button_comment" />
+        <Button
+            android:id="@+id/single_person_Report_button"
+            style="@style/bottomButtonStyle"
+            android:text="@string/button_report" />
+
+        <Button
+            android:id="@+id/single_person_cancel_button"
+            style="@style/bottomButtonStyle"
+            android:text="@string/button_cancel" />
+    </LinearLayout>
 </LinearLayout>

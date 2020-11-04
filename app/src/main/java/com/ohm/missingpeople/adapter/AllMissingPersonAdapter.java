@@ -74,26 +74,26 @@ public class AllMissingPersonAdapter extends RecyclerView.Adapter<AllMissingPers
                 try {
                     Intent singlePerson = new Intent(context, SinglePersonDetailView.class);
                     singlePerson.putExtra(Constants.SIGLE_PERSON_ID, position);
-                    singlePerson.putExtra(Constants.SIGLE_PERSON_NAME, dataList.get(position).getName());
-                    singlePerson.putExtra(Constants.SIGLE_PERSON_FATHER_NAME, dataList.get(position).getFathername());
-                    singlePerson.putExtra(Constants.SIGLE_PERSON_MOTHER_NAME, dataList.get(position).getMothername());
-                    singlePerson.putExtra(Constants.SIGLE_PERSON_GENDER, dataList.get(position).getGender());
-                    singlePerson.putExtra(Constants.SIGLE_PERSON_AGE, dataList.get(position).getAge());
-                    singlePerson.putExtra(Constants.SIGLE_PERSON_HEIGHT, dataList.get(position).getHeight());
-                    singlePerson.putExtra(Constants.SIGLE_PERSON_WEIGHT, dataList.get(position).getWeight());
-                    singlePerson.putExtra(Constants.SIGLE_PERSON_EYE_COLOR, dataList.get(position).getEyesColor());
-                    singlePerson.putExtra(Constants.SIGLE_PERSON_HAIR_COLOR, dataList.get(position).getHairColor());
-                    singlePerson.putExtra(Constants.SIGLE_PERSON_PICTURE_NAME, "http://missingppl.com/Picture/" + dataList.get(position).getPicture());
-                    singlePerson.putExtra(Constants.SIGLE_PERSON_LAST_SEEN, dataList.get(position).getLastseen());
-                    singlePerson.putExtra(Constants.SIGLE_PERSON_MISSING_FROM, dataList.get(position).getMissingFrom());
-                    singlePerson.putExtra(Constants.SIGLE_PERSON_MISSING_SINCE, dataList.get(position).getMissingSince());
-                    singlePerson.putExtra(Constants.SIGLE_PERSON_IDENTITY_MARK, dataList.get(position).getIdentityMark());
-                    singlePerson.putExtra(Constants.SIGLE_PERSON_DESCRIPTION, dataList.get(position).getDescription());
-                    singlePerson.putExtra(Constants.SIGLE_PERSON_POSTED_BY, dataList.get(position).getPostedby());
-                    singlePerson.putExtra(Constants.SIGLE_PERSON_CONTACT_MOBILE, dataList.get(position).getContactdetail());
-                    singlePerson.putExtra(Constants.SIGLE_PERSON_CITY, dataList.get(position).getCity());
-                    singlePerson.putExtra(Constants.SIGLE_PERSON_STATE, dataList.get(position).getState());
-                    singlePerson.putExtra(Constants.SIGLE_PERSON_COUNTRY, dataList.get(position).getCountry());
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_NAME, checkForBlank(dataList.get(position).getName()));
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_FATHER_NAME, checkForBlank(dataList.get(position).getFathername()));
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_MOTHER_NAME, checkForBlank(dataList.get(position).getMothername()));
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_GENDER, checkForBlank(dataList.get(position).getGender()));
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_AGE, checkForBlank(dataList.get(position).getAge()));
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_HEIGHT, checkForBlank(dataList.get(position).getHeight()));
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_WEIGHT, checkForBlank(dataList.get(position).getWeight()));
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_EYE_COLOR, checkForBlank(dataList.get(position).getEyesColor()));
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_HAIR_COLOR, checkForBlank(dataList.get(position).getHairColor()));
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_PICTURE_NAME, checkForBlank("http://missingppl.com/Picture/" + dataList.get(position).getPicture()));
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_LAST_SEEN, checkForBlank(dataList.get(position).getLastseen()));
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_MISSING_FROM, checkForBlank(dataList.get(position).getMissingFrom()));
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_MISSING_SINCE, checkForBlank(dataList.get(position).getMissingSince()));
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_IDENTITY_MARK, checkForBlank(dataList.get(position).getIdentityMark()));
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_DESCRIPTION, checkForBlank(dataList.get(position).getDescription()));
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_POSTED_BY, checkForBlank(dataList.get(position).getPostedby()));
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_CONTACT_MOBILE, checkForBlank(dataList.get(position).getContactdetail()));
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_CITY, checkForBlank(dataList.get(position).getCity()));
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_STATE, checkForBlank(dataList.get(position).getState()));
+                    singlePerson.putExtra(Constants.SIGLE_PERSON_COUNTRY, checkForBlank(dataList.get(position).getCountry()));
 
 
                     singlePerson.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
@@ -157,6 +157,12 @@ public class AllMissingPersonAdapter extends RecyclerView.Adapter<AllMissingPers
             });
 
         }
+    }
+
+    private String checkForBlank(String tempStr) {
+        if (!tempStr.isEmpty())
+            return tempStr;
+        return "Not Available";
     }
 }
 
