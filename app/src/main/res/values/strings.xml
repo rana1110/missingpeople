@@ -15,7 +15,7 @@
     <string name="button_report">Report</string>
     <string name="log_out"><u>Log Out</u></string>
     <string name="send_email">Send Email</string>
-
+    <string name="button_add_comment">Add Comment</string>
 
 
 
@@ -27,6 +27,7 @@
     <string name="enter_first_name">Enter First Name</string>
     <string name="enter_last_name">Enter Last Name</string>
     <string name="enter_email_address">Enter Email Address</string>
+    <string name="enter_add_comment">Please Enter Valid Comment Only</string>
     <string name="enter_password">Enter password</string>
     <string name="enter_mobile_number">Enter Valid Mobile Number</string>
     <string name="enter_old_password">Enter Old password</string>

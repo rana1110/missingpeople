@@ -138,8 +138,6 @@ public class LoginActivity extends BaseActivity {
         forgotPasswordBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
-
                 apiInterface = ApiClient.getClient().create(ApiInterface.class);
                 forgotPasswordCall = apiInterface.forgotPasswordEmailSend(forgotPasswordDialog.getText().toString());
                 forgotPasswordCall.enqueue(new Callback<GeneralModel>() {

@@ -18,10 +18,11 @@
     <dimen name="dimen_120dp">120dp</dimen>
     <dimen name="dimen_144dp">144dp</dimen>
 
-    <dimen name="dimen_200dp">200dp</dimen>
+    <dimen name="dimen_240dp">240dp</dimen>
 
     <dimen name="dimen_320dp">320dp</dimen>
 
+    <dimen name="dimen_540dp">540dp</dimen>
 
 
     <dimen name="font_size_8">8sp</dimen>
