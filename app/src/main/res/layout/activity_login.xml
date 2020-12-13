@@ -33,7 +33,7 @@
         style="@style/textInputLayoutStyle"
         android:layout_width="match_parent"
         app:passwordToggleEnabled="true"
-        app:passwordToggleTint="@color/brandColorCode3"
+        app:passwordToggleTint="@color/brandColorCode31"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText

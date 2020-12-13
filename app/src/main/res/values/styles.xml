@@ -15,6 +15,7 @@
     </style>
 
     <style name="bottomButtonStyle" parent="Widget.AppCompat.Button">
+        <item name="android:background">@drawable/round_corner_button</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:padding">@dimen/dimen_4dp</item>
         <item name="android:layout_weight">1</item>
@@ -59,11 +60,11 @@
     </style>
 
     <style name="myAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <item name="colorAccent">@color/white_color_code_1</item>
+        <item name="colorAccent">@color/brandColorCode21</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/font_size_16</item>
-        <item name="android:textColor">@color/white_color_code_1</item>
-        <item name="android:background">@color/brandColorCode2</item>
+        <item name="android:textColor">@color/brandColorCode31</item>
+        <item name="android:background">@color/brandColorCode21</item>
     </style>
 
     <style name="headingTextView" parent="TextAppearance.AppCompat.Title">
@@ -99,11 +100,11 @@
 
 
     <style name="feedbackInputText" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">@color/Black</item>
+        <item name="android:textColor">@color/brandColorCode31</item>
         <item name="android:textSize">@dimen/font_size_16</item>
         <item name="android:layout_margin">@dimen/dimen_16dp</item>
         <item name="android:paddingLeft">@dimen/dimen_4dp</item>
-        <item name="android:textColorHint">@color/Black</item>
+        <item name="android:textColorHint">@color/brandColorCode31</item>
         <item name="android:padding">@dimen/dimen_16dp</item>
     </style>
 
@@ -116,12 +117,13 @@
     <style name="singlePersonTextViewBoldStyle" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/brandColorCode3</item>
+        <item name="android:textColor">@color/brandColorCode31</item>
         <item name="android:textSize">@dimen/font_size_24</item>
         <item name="android:layout_weight">1</item>
         <item name="android:layout_marginRight">@dimen/dimen_16dp</item>
         <item name="android:gravity">center</item>
         <item name="android:maxLines">3</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="singlePersonTextViewStyle" parent="TextAppearance.AppCompat">
@@ -130,8 +132,9 @@
         <item name="android:layout_marginLeft">@dimen/dimen_16dp</item>
         <item name="android:layout_weight">1.5</item>
         <item name="android:layout_gravity">center</item>
-        <item name="android:textColor">@color/brandColorCode3</item>
+        <item name="android:textColor">@color/brandColorCode31</item>
         <item name="android:textSize">@dimen/font_size_16</item>
+        <item name="android:textStyle">bold</item>
         <item name="android:maxLines">2</item>
     </style>
 
@@ -153,7 +156,7 @@
         <item name="android:layout_height">wrap_content</item>
         <item name="android:orientation">horizontal</item>
         <item name="android:layout_marginTop">@dimen/dimen_16dp</item>
-        <item name="background">@color/brandColorCode3</item>
+        <item name="background">@color/brandColorCode21</item>
     </style>
 
     <style name="textInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
@@ -193,14 +196,14 @@
     </style>
 
     <style name="AppTheme.TextErrorAppearance" parent="TextAppearance.Design.Error">
-        <item name="android:textColor">@color/color_code_2</item>
+        <item name="android:textColor">@color/brandColorCode31</item>
         <item name="android:textSize">@dimen/font_size_12</item>
     </style>
 
     <style name="otpValidationEditTextStyle" parent="Widget.AppCompat.EditText">
         <item name="android:layout_height">@dimen/dimen_56dp</item>
         <item name="android:layout_width">@dimen/dimen_56dp</item>
-        <item name="android:textColor">@color/brandColorCode3</item>
+        <item name="android:textColor">@color/brandColorCode31</item>
         <item name="android:maxLength">1</item>
         <item name="android:layout_marginEnd">@dimen/dimen_16dp</item>
         <item name="android:gravity">center</item>

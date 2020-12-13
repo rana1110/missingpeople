@@ -2,7 +2,7 @@
     android:id="@+id/login_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/brandColorCode2"
+    android:background="@color/brandColorCode21"
     android:orientation="vertical">
 
     <androidx.core.widget.NestedScrollView
@@ -36,9 +36,9 @@
                 style="@style/singlePersonTextViewBoldStyle"
                 android:gravity="center_horizontal"
                 android:maxLines="3"
+                android:text="Ankitkumar Rana"
                 android:textSize="@dimen/font_size_24"
-                android:textStyle="bold"
-                android:text="Ankitkumar Rana" />
+                android:textStyle="bold" />
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -68,7 +68,7 @@
                     android:padding="@dimen/dimen_8dp"
                     android:text="Ankitkumar Rana is missing from Malydhara Ankitkumar Rana is missing from Malydhara Ankitkumar Rana is missing from Malydhara Ankitkumar Rana is missing from Malydhara,Dungari,checkpost Ankitkumar Rana is missing from Malydhara,Dungari,checkpost Ankitkumar Rana is missing from Malydhara,Dungari,checkpost Ankitkumar Rana is missing from Malydhara,Dungari,checkpost "
                     android:textAlignment="center"
-                    android:textColor="@color/brandColorCode7"
+                    android:textColor="@color/brandColorCode31"
                     android:textSize="@dimen/font_size_16"
                     android:textStyle="bold" />
 
@@ -254,12 +254,15 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/dimen_56dp"
-        android:background="@color/brandColorCode2"
+        android:layout_marginBottom="@dimen/dimen_8dp"
+        android:background="@color/brandColorCode21"
         android:orientation="horizontal">
 
         <Button
             android:id="@+id/single_person_comment_button"
             style="@style/bottomButtonStyle"
+            android:layout_marginLeft="@dimen/dimen_4dp"
+            android:layout_marginRight="@dimen/dimen_4dp"
             android:onClick="onAddButtonClick"
             android:text="@string/button_comment" />
 
@@ -271,6 +274,8 @@
         <Button
             android:id="@+id/single_person_cancel_button"
             style="@style/bottomButtonStyle"
+            android:layout_marginLeft="@dimen/dimen_4dp"
+            android:layout_marginRight="@dimen/dimen_4dp"
             android:text="@string/button_cancel" />
     </LinearLayout>
 </LinearLayout>

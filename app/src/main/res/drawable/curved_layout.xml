@@ -2,17 +2,17 @@
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_pressed="true">
         <shape>
-            <stroke android:width="2dp" android:color="@color/brandColorCode2" />
+            <stroke android:width="2dp" android:color="@color/brandColorCode21" />
             <corners android:radius="@dimen/dimen_16dp" />
-            <solid android:color="@color/brandColorCode3" />
+            <solid android:color="@color/brandColorCode31" />
         </shape>
     </item>
 
     <item>
         <shape>
-            <stroke android:width="2dp" android:color="@color/brandColorCode2" />
+            <stroke android:width="2dp" android:color="@color/brandColorCode31" />
             <corners android:radius="@dimen/dimen_16dp" />
-            <solid android:color="@color/brandColorCode1" />
+            <solid android:color="@color/brandColorCode21" />
         </shape>
     </item>
 </selector>

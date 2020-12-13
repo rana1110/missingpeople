@@ -23,10 +23,10 @@
             android:layout_marginTop="@dimen/dimen_8dp"
             android:layout_marginRight="@dimen/dimen_8dp"
             android:layout_marginBottom="@dimen/dimen_8dp"
-            android:background="@color/blue_color_code_1"
+            android:background="@color/brandColorCode21"
             android:dropDownSelector="@color/brandColorCode31"
             android:gravity="center_horizontal"
-            android:popupBackground="@color/blue_color_code_1"
+            android:popupBackground="@color/brandColorCode21"
             android:spinnerMode="dropdown" />
     </androidx.appcompat.widget.Toolbar>
 </com.google.android.material.appbar.AppBarLayout>

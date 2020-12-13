@@ -3,8 +3,8 @@
     android:id="@+id/login_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/brandColorCode3"
-    android:backgroundTint="@color/brandColorCode1"
+    android:background="@color/brandColorCode21"
+    android:backgroundTint="@color/brandColorCode21"
     android:gravity="center"
     android:orientation="vertical">
 
