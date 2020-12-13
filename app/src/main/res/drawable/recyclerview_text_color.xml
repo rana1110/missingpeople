@@ -2,8 +2,8 @@
     xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:state_pressed="true"
-        android:color="@color/brandColorCode2" />
+        android:color="@color/brandColorCode21" />
     <item
         android:state_pressed="false"
-        android:color="@color/brandColorCode3" />
+        android:color="@color/brandColorCode31" />
 </selector>

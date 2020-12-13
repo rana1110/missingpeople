@@ -28,7 +28,7 @@
     <style name="textViewStyle" parent="android:Widget.TextView">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
-        <item name="android:textColor">@color/brandColorCode3</item>
+        <item name="android:textColor">@color/brandColorCode31</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/font_size_14</item>
     </style>
@@ -47,7 +47,7 @@
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
     <style name="NavDrawerTextStyle" parent="Base.TextAppearance.AppCompat">
-        <item name="android:textColor">@color/brandColorCode3</item>
+        <item name="android:textColor">@drawable/button_text_color</item>
         <item name="android:textSize">@dimen/font_size_16</item>
         <item name="android:textStyle">bold</item>
 
@@ -68,7 +68,8 @@
 
     <style name="headingTextView" parent="TextAppearance.AppCompat.Title">
         <item name="android:textSize">@dimen/font_size_16</item>
-        <item name="android:textColor">@color/white_color_code_1</item>
+        <item name="android:textColor">@color/brandColorCode31</item>
+        <item name="android:textStyle">bold</item>
     </style>
 
     <style name="customSpinnerSmall" parent="@android:style/Widget.TextView.SpinnerItem">
@@ -85,7 +86,7 @@
 
 
     <style name="smallToolbarText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <item name="android:textSize">@dimen/font_size_16</item>
+        <item name="android:textSize">@dimen/font_size_20</item>
     </style>
 
     <style name="mediumToolbarText" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
@@ -155,10 +156,11 @@
         <item name="background">@color/brandColorCode3</item>
     </style>
 
-    <style name="textInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
-        <item name="boxStrokeColor">@color/brandColorCode3</item>
-        <item name="boxBackgroundColor">@color/brandColorCode1</item>
-        <item name="android:textColorHint">@color/brandColorCode3</item>
+    <style name="textInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox.Dense">
+        <item name="boxStrokeWidth">@dimen/dimen_2dp</item>
+        <item name="boxStrokeColor">@color/brandColorCode31</item>
+        <item name="boxBackgroundColor">@color/brandColorCode21</item>
+        <item name="android:textColorHint">@color/brandColorCode31</item>
         <item name="boxBackgroundMode">outline</item>
         <item name="errorEnabled">true</item>
         <item name="hintTextAppearance">@style/AppTheme.TextFloatLabelAppearance</item>
@@ -169,13 +171,13 @@
     </style>
 
     <style name="AppTheme.TextFloatLabelAppearance" parent="TextAppearance.Design.Hint">
-        <item name="android:textColor">@color/brandColorCode3</item>
-        <item name="android:background">@color/brandColorCode3</item>
+        <item name="android:textColor">@color/brandColorCode31</item>
+        <item name="android:background">@color/brandColorCode31</item>
         <item name="android:textSize">@dimen/font_size_12</item>
     </style>
 
     <style name="textInputLayoutEditTextStyle" parent="Widget.AppCompat.EditText">
-        <item name="android:textColor">@color/brandColorCode3</item>
+        <item name="android:textColor">@color/brandColorCode31</item>
         <item name="android:textSize">@dimen/font_size_16</item>
         <item name="android:textStyle">bold</item>
         <item name="singleLine">true</item>
@@ -185,9 +187,9 @@
     </style>
 
     <style name="TextInputLayoutAppearance" parent="Widget.Design.TextInputLayout">
-        <item name="colorControlNormal">@color/brandColorCode3</item>
-        <item name="colorControlActivated">@color/brandColorCode3</item>
-        <item name="colorControlHighlight">@color/brandColorCode3</item>
+        <item name="colorControlNormal">@color/brandColorCode31</item>
+        <item name="colorControlActivated">@color/brandColorCode31</item>
+        <item name="colorControlHighlight">@color/brandColorCode31</item>
     </style>
 
     <style name="AppTheme.TextErrorAppearance" parent="TextAppearance.Design.Error">

@@ -12,7 +12,7 @@
         app:navigationIcon="@drawable/back_navigation_arrow"
         app:popupTheme="@style/AppTheme.PopupOverlay"
         app:titleTextAppearance="@style/smallToolbarText"
-        app:titleTextColor="@color/toolbarTextColor">
+        app:titleTextColor="@color/brandColorCode31">
 
         <Spinner
             android:id="@+id/countrySpinner"
@@ -24,7 +24,7 @@
             android:layout_marginRight="@dimen/dimen_8dp"
             android:layout_marginBottom="@dimen/dimen_8dp"
             android:background="@color/blue_color_code_1"
-            android:dropDownSelector="@color/blue_color_code_3"
+            android:dropDownSelector="@color/brandColorCode31"
             android:gravity="center_horizontal"
             android:popupBackground="@color/blue_color_code_1"
             android:spinnerMode="dropdown" />
