@@ -1,12 +1,52 @@
-<resources xmlns:tools="http://schemas.android.com/tools">
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="dimen_2dp">2dp</dimen>
+    <dimen name="dimen_4dp">4dp</dimen>
+    <dimen name="dimen_8dp">8dp</dimen>
+    <dimen name="dimen_16dp">16dp</dimen>
+    <dimen name="dimen_24dp">24dp</dimen>
+    <dimen name="dimen_32dp">32dp</dimen>
+    <dimen name="dimen_40dp">40dp</dimen>
+    <dimen name="dimen_48dp">48dp</dimen>
+    <dimen name="dimen_56dp">56dp</dimen>
+    <dimen name="dimen_64dp">64dp</dimen>
+    <dimen name="dimen_72dp">72dp</dimen>
+    <dimen name="dimen_80dp">80dp</dimen>
+    <dimen name="dimen_88dp">88dp</dimen>
+    <dimen name="dimen_96dp">96dp</dimen>
+    <dimen name="dimen_104dp">104dp</dimen>
+    <dimen name="dimen_112dp">112dp</dimen>
+    <dimen name="dimen_120dp">120dp</dimen>
+    <dimen name="dimen_144dp">144dp</dimen>
+
+    <dimen name="dimen_240dp">240dp</dimen>
+
+    <dimen name="dimen_320dp">320dp</dimen>
+
+    <dimen name="dimen_540dp">540dp</dimen>
+
+
+    <dimen name="font_size_8">8sp</dimen>
+    <dimen name="font_size_12">12sp</dimen>
+    <dimen name="font_size_14">14sp</dimen>
+    <dimen name="font_size_16">16sp</dimen>
+    <dimen name="font_size_20">20sp</dimen>
+    <dimen name="font_size_24">24sp</dimen>
+    <dimen name="font_size_30">30sp</dimen>
+    <dimen name="font_size_32">32sp</dimen>
+    <dimen name="font_size_40">40sp</dimen>
+    <dimen name="font_size_48">48sp</dimen>
+    <dimen name="font_size_56">56sp</dimen>
+    <dimen name="font_size_64">64sp</dimen>
+    <dimen name="font_size_72">72sp</dimen>
+
+
+    <dimen name="margin_rating_dialog">48dp</dimen>
+    <dimen name="font_3">32sp</dimen>
+    <!-- Default screen margins, per the Android Design guidelines. -->
+    <dimen name="activity_horizontal_margin">16dp</dimen>
+    <dimen name="activity_vertical_margin">16dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
-    <dimen name="dimen_16" >16dp</dimen>
-    <dimen name="dimen_32">32dp</dimen>
-    <dimen name="dimen_56">56dp</dimen>
 
-
-
-
-    <dimen name="font_14sp">16sp</dimen>
 
 </resources>

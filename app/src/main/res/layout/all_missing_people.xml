@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/all_misssing_people_layout"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="@dimen/dimen_8dp"
+    android:layout_marginRight="@dimen/dimen_8dp"
+    android:layout_marginBottom="@dimen/dimen_8dp"
+    android:background="@drawable/recyclerview_round_background">
+
+
+    <ImageView
+        android:padding="@dimen/dimen_8dp"
+        android:id="@+id/newsImageView"
+        android:layout_width="@dimen/dimen_104dp"
+        android:layout_height="@dimen/dimen_104dp"
+        android:layout_gravity="center"
+        android:adjustViewBounds="true"
+        android:scaleType="centerCrop"
+        android:src="@mipmap/image_not_found" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="@dimen/dimen_16dp"
+        android:layout_marginTop="@dimen/dimen_8dp"
+        android:layout_marginBottom="@dimen/dimen_8dp"
+        android:layout_toRightOf="@+id/newsImageView"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/personName"
+            style="@style/recyclerTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="1"
+            android:text="Ankitkumar Rana Rana Ankitkumar Rana Rana"
+            android:textSize="@dimen/font_size_20" />
+
+        <TextView
+            android:id="@+id/personMissingFrom"
+            style="@style/recyclerTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textStyle="normal" />
+
+        <!--<TextView
+            android:id="@+id/personContactDetails"
+            style="@style/recyclerTextViewStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />-->
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/call_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_vertical|end"
+        android:layout_marginRight="@dimen/dimen_16dp"
+        android:layout_below="@+id/newsImageView"
+        android:orientation="vertical"
+        android:visibility="gone">
+
+        <ImageView
+            android:id="@+id/callIconImageButton"
+            android:layout_width="@dimen/dimen_16dp"
+            android:layout_height="@dimen/dimen_16dp"
+            android:gravity="center"
+            android:src="@drawable/call_icon" />
+
+        <ImageView
+            android:id="@+id/shareIconImageButton"
+            android:layout_width="@dimen/dimen_16dp"
+            android:layout_height="@dimen/dimen_16dp"
+            android:layout_marginTop="@dimen/dimen_24dp"
+            android:gravity="center"
+            android:src="@drawable/share_icon" />
+    </LinearLayout>
+
+</RelativeLayout>

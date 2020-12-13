@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <color name="brandColor">#00ACC1</color>
-    <color name="brandFontColor">#ffffff</color>
-    <color name="brandScreenBackground">#ffffff</color>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <color name="colorPrimary">@color/brandColorCode21</color>
+    <color name="colorPrimaryDark">@color/brandColorCode21</color>
+    <color name="colorAccent">@color/brandColorCode21</color>
 
+    <color name="mtrl_textinput_default_box_stroke_color">@color/brandColorCode31</color>
+    <color name="navigationDrawerMenuTextColor">@color/brandColorCode31</color>
+    <color name="navigationToggleColor">@color/brandColorCode31</color>
+    <color name="navigationMenuIconColor">@color/brandColorCode31</color>
 
-    <color name="colorPrimary">@color/brandColor</color>
-    <color name="colorPrimaryDark">@color/brandColor</color>
-    <color name="colorAccent">@color/brandColor</color>
+    <color name="brandColorCode21">#1565C0</color>
+    <color name="brandColorCode31">#E3F2FD</color>
 
+    <!--#
+
+    BF360C
+    -->
 </resources>
