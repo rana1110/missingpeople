@@ -9,7 +9,11 @@
     <color name="navigationToggleColor">@color/brandColorCode31</color>
     <color name="navigationMenuIconColor">@color/brandColorCode31</color>
 
-    <color name="brandColorCode21">#BF360C</color>
-    <color name="brandColorCode31">#FFFFFF</color>
+    <color name="brandColorCode21">#1565C0</color>
+    <color name="brandColorCode31">#E3F2FD</color>
 
+    <!--#
+
+    BF360C
+    -->
 </resources>
