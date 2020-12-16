@@ -109,6 +109,14 @@
 
 
     <!--<TextView
+        android:id="@+id/generateToken"
+        style="@style/textViewStyle"
+        android:layout_gravity="center_horizontal"
+        android:layout_marginTop="@dimen/dimen_16dp"
+        android:gravity="center_horizontal"
+        android:onClick="tokenGenerator"
+        android:text="Token" />-->
+    <!--<TextView
         android:id="@+id/change_password"
         style="@style/textViewStyle"
         android:layout_gravity="center_horizontal"

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/brandColorCode21"
+    android:padding="8dp">
+
+    <RelativeLayout
+        android:id="@+id/icon_container"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:id="@+id/notificationIconFromUrl"
+            android:padding="@dimen/dimen_8dp"
+            android:layout_width="@dimen/dimen_104dp"
+            android:layout_height="@dimen/dimen_104dp"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:scaleType="centerCrop"
+            android:src="@mipmap/image_not_found" />
+    </RelativeLayout>
+
+    <LinearLayout
+        android:id="@+id/notification_main"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="false"
+        android:layout_marginTop="3dp"
+        android:layout_toRightOf="@+id/icon_container"
+        android:gravity="center_vertical"
+        android:orientation="vertical"
+        android:paddingLeft="6dp">
+
+        <TextView
+            style="@style/recyclerTextViewStyle"
+            android:id="@+id/content_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/brandColorCode41"
+            android:textSize="@dimen/font_size_16"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/content_text"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ellipsize="end"
+            android:maxLines="3"
+            android:textColor="@color/brandColorCode41"
+            android:textSize="@dimen/font_size_16" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/timestamp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:paddingRight="@dimen/dimen_16dp"
+        android:textColor="@color/brandColorCode31"
+        android:textSize="@dimen/font_size_16"
+        android:textStyle="bold" />
+
+</RelativeLayout>

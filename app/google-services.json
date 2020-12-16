@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1013651004930",
+    "project_id": "missing-people-a309b",
+    "storage_bucket": "missing-people-a309b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1013651004930:android:da288feb6287b1a780111b",
+        "android_client_info": {
+          "package_name": "com.ohm.missingpeople"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1013651004930-vi3klu44e91su0ur48oa8phg9ou4tikm.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAbJ3pZwVr4zT8RCdvyp_43Weuw6CBXn1w"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1013651004930-vi3klu44e91su0ur48oa8phg9ou4tikm.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

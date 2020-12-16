@@ -3,15 +3,24 @@ package com.ohm.missingpeople.activity.authentication;
 import android.app.AlertDialog;
 import android.os.Bundle;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.CheckBox;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
+
+import com.google.android.gms.tasks.OnCompleteListener;
+import com.google.android.gms.tasks.Task;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
+import com.google.firebase.iid.FirebaseInstanceId;
+import com.google.firebase.iid.InstanceIdResult;
+import com.google.firebase.messaging.FirebaseMessaging;
 import com.ohm.missingpeople.R;
 import com.ohm.missingpeople.activity.HomeScreenActivity;
 import com.ohm.missingpeople.networkoperation.model.GeneralModel;
@@ -48,6 +57,14 @@ public class LoginActivity extends BaseActivity {
         iSharedPreferenceHelper = new SharedPreferenceHelper(this);
         setContentView(R.layout.activity_login);
         initView();
+        FirebaseMessaging.getInstance().subscribeToTopic("/topics/RANA");
+        FirebaseInstanceId.getInstance().getInstanceId()
+                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                        Log.e("tokenCall",""+task.getResult().getToken());
+                    }
+                });
     }
 
     private void initView() {
@@ -161,5 +178,17 @@ public class LoginActivity extends BaseActivity {
 
             }
         });
+    }
+    public void tokenGenerator(View v)
+    {
+       // FirebaseMessaging.getInstance().subscribeToTopic("/topics/RD");
+        FirebaseMessaging.getInstance().subscribeToTopic("/test/updates");
+        FirebaseInstanceId.getInstance().getInstanceId()
+                .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<InstanceIdResult> task) {
+                        Log.e("tokenCall",""+task.getResult().getToken());
+                    }
+                });
     }
 }

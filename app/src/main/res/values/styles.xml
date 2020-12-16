@@ -109,10 +109,10 @@
     </style>
 
     <style name="recyclerTextViewStyle" parent="TextAppearance.AppCompat">
-        <item name="android:textColor">@drawable/recyclerview_text_color</item>
-        <item name="android:textSize">@dimen/font_size_16</item>
-        <item name="android:textStyle">bold</item>
-    </style>
+    <item name="android:textColor">@drawable/recyclerview_text_color</item>
+    <item name="android:textSize">@dimen/font_size_16</item>
+    <item name="android:textStyle">bold</item>
+</style>
 
     <style name="singlePersonTextViewBoldStyle" parent="TextAppearance.AppCompat">
         <item name="android:layout_width">match_parent</item>

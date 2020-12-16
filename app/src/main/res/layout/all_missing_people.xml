@@ -10,8 +10,8 @@
 
 
     <ImageView
-        android:padding="@dimen/dimen_8dp"
         android:id="@+id/newsImageView"
+        android:padding="@dimen/dimen_8dp"
         android:layout_width="@dimen/dimen_104dp"
         android:layout_height="@dimen/dimen_104dp"
         android:layout_gravity="center"
