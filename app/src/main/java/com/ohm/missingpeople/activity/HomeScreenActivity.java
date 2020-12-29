@@ -1,11 +1,13 @@
 package com.ohm.missingpeople.activity;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.google.android.material.internal.NavigationMenuView;
 import com.google.android.material.navigation.NavigationView;
 import com.ohm.missingpeople.R;
 import com.ohm.missingpeople.activity.authentication.ChangePassword;
+import com.ohm.missingpeople.activity.authentication.LoginActivity;
 import com.ohm.missingpeople.adapter.AllMissingPersonAdapter;
 import com.ohm.missingpeople.networkoperation.model.AllMissingPeople;
 import com.ohm.missingpeople.networkoperation.model.MissingPeopleDataClass;
@@ -39,6 +41,8 @@ import java.util.ArrayList;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
+
+import static com.ohm.missingpeople.utils.Constants.LOGOUT_ERROR;
 
 public class HomeScreenActivity extends BaseActivity implements NavigationView.OnNavigationItemSelectedListener, AdapterView.OnItemSelectedListener {
     Toolbar toolbar;
@@ -82,9 +86,9 @@ public class HomeScreenActivity extends BaseActivity implements NavigationView.O
         drawer = findViewById(R.id.drawer_layout);
         navMenuView = (NavigationMenuView) navigationView.getChildAt(0);
         headerLayout = (LinearLayout) HomeScreenActivity.this.findViewById(R.id.headerLayout);
-      //  swipeRefreshLayout = findViewById(R.id.pullToRefresh);
+        //  swipeRefreshLayout = findViewById(R.id.pullToRefresh);
         recyclerView = findViewById(R.id.recycler_view);
-       // swipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.brandColorCode1));
+        // swipeRefreshLayout.setColorSchemeColors(getResources().getColor(R.color.brandColorCode1));
         layoutManager = new LinearLayoutManager(HomeScreenActivity.this);
 
         navMenuView.addItemDecoration(new DividerItemDecoration(this, DividerItemDecoration.VERTICAL));
@@ -110,12 +114,12 @@ public class HomeScreenActivity extends BaseActivity implements NavigationView.O
 
     }
 
-    @Override
+   /* @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
-    }
+    }*/
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
@@ -182,7 +186,10 @@ public class HomeScreenActivity extends BaseActivity implements NavigationView.O
     }
 
     public void logOutFromApp(View v) {
-        //iSharedPreferenceHelper.deleteLoginCreds();
-        Toast.makeText(this, "", Toast.LENGTH_SHORT).show();
+        iSharedPreferenceHelper.deleteLoginCreds();
+        Intent openIntent = new Intent(this, LoginActivity.class);
+        openIntent.putExtra(LOGOUT_ERROR, "Logout Successfully");
+        openIntent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+        startActivity(openIntent);
     }
 }

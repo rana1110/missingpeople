@@ -60,7 +60,7 @@
     </style>
 
     <style name="myAlertDialogStyle" parent="Theme.AppCompat.Light.Dialog.Alert">
-        <item name="colorAccent">@color/brandColorCode21</item>
+        <item name="colorAccent">@color/brandColorCode31</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textSize">@dimen/font_size_16</item>
         <item name="android:textColor">@color/brandColorCode31</item>

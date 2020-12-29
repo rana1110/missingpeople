@@ -1,4 +1,5 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:layout_marginLeft="@dimen/dimen_40dp"
@@ -46,8 +47,8 @@
             style="@style/textInputLayoutEditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textEmailAddress"
-            android:hint="@string/enter_email_address" />
+            android:hint="@string/enter_email_address"
+            android:inputType="textEmailAddress" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -61,8 +62,8 @@
             style="@style/textInputLayoutEditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:inputType="textPassword"
-            android:hint="@string/enter_password" />
+            android:hint="@string/enter_password"
+            android:inputType="textPassword" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
@@ -75,9 +76,9 @@
             style="@style/textInputLayoutEditTextStyle"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:hint="@string/enter_mobile_number"
             android:inputType="number"
-            android:maxLength="10"
-            android:hint="@string/enter_mobile_number" />
+            android:maxLength="10" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <Button
@@ -95,7 +96,7 @@
         android:layout_marginLeft="@dimen/font_size_16"
         android:layout_marginTop="@dimen/dimen_16dp"
         android:layout_marginRight="@dimen/font_size_16"
-        android:onClick="cancelClick"
         android:background="@drawable/round_corner_button"
+        android:onClick="cancelClick"
         android:text="@string/button_cancel" />
 </LinearLayout>

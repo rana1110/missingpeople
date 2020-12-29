@@ -38,6 +38,8 @@ import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
+import static com.ohm.missingpeople.utils.Constants.LOGOUT_ERROR;
+
 public class LoginActivity extends BaseActivity {
 
     private TextInputLayout textInputLayoutUserName, textInputLayoutPassword;
@@ -57,6 +59,7 @@ public class LoginActivity extends BaseActivity {
         iSharedPreferenceHelper = new SharedPreferenceHelper(this);
         setContentView(R.layout.activity_login);
         initView();
+
         FirebaseMessaging.getInstance().subscribeToTopic("/topics/RANA");
         FirebaseInstanceId.getInstance().getInstanceId()
                 .addOnCompleteListener(new OnCompleteListener<InstanceIdResult>() {
@@ -65,6 +68,11 @@ public class LoginActivity extends BaseActivity {
                         Log.e("tokenCall",""+task.getResult().getToken());
                     }
                 });
+        if(getIntent().getStringExtra(LOGOUT_ERROR)!=null)
+        {
+            showError(getIntent().getStringExtra(LOGOUT_ERROR));
+        }
+
     }
 
     private void initView() {

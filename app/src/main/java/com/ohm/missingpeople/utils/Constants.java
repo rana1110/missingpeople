@@ -54,6 +54,7 @@ public class Constants {
     public static final String OFF_INTENT = "com.example.leanh.util.Constant.OFF_INTENT";
     public static final String OPEN_KEY = "open";
 
+    public static final String LOGOUT_ERROR = "logout";
 
     public static final int SYSYEM_EXIT_STATUS = 0;
 
