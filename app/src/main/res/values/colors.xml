@@ -9,10 +9,13 @@
     <color name="navigationToggleColor">@color/brandColorCode31</color>
     <color name="navigationMenuIconColor">@color/brandColorCode31</color>
 
-    <color name="brandColorCode21">#1565C0</color>
-    <color name="brandColorCode31">#E3F2FD</color>
-    <color name="brandColorCode41">#FFFFFF</color>
+    <color name="brandColorCode31">#d6e0f0</color>
+    <color name="brandColorCode21">#30475e</color>
+    <color name="brandColorCode41">#0a043c</color>
 
+    <!--<color name="brandColorCode21">#1565C0</color>
+    <color name="brandColorCode31">#E3F2FD</color>
+    <color name="brandColorCode41">#FFFFFF</color>-->
     <!--#
 
     BF360C
